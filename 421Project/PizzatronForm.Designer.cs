@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
@@ -51,8 +50,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblSelectedBasePizza = new System.Windows.Forms.Label();
+            this.listPizzaBaseMenu = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -124,8 +124,6 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.tabCart.SuspendLayout();
             this.tabOrder.SuspendLayout();
@@ -156,7 +154,6 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -231,7 +228,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.listView1);
+            this.tabPage3.Controls.Add(this.listPizzaBaseMenu);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -242,7 +239,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.panel5);
+            this.groupBox4.Controls.Add(this.lblSelectedBasePizza);
             this.groupBox4.Location = new System.Drawing.Point(817, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(380, 492);
@@ -250,37 +248,47 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "SELECTED";
             // 
-            // label17
+            // panel5
             // 
-            this.label17.Location = new System.Drawing.Point(6, 31);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(267, 137);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "None";
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
+            this.panel5.Location = new System.Drawing.Point(5, 252);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(369, 234);
+            this.panel5.TabIndex = 1;
             // 
-            // listView1
+            // lblSelectedBasePizza
             // 
-            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.listView1.BackColor = System.Drawing.Color.Salmon;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lblSelectedBasePizza.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSelectedBasePizza.Location = new System.Drawing.Point(6, 31);
+            this.lblSelectedBasePizza.Name = "lblSelectedBasePizza";
+            this.lblSelectedBasePizza.Size = new System.Drawing.Size(368, 192);
+            this.lblSelectedBasePizza.TabIndex = 0;
+            this.lblSelectedBasePizza.Text = "None";
+            // 
+            // listPizzaBaseMenu
+            // 
+            this.listPizzaBaseMenu.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.listPizzaBaseMenu.BackColor = System.Drawing.Color.Salmon;
+            this.listPizzaBaseMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listPizzaBaseMenu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            this.listPizzaBaseMenu.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.listPizzaBaseMenu.FullRowSelect = true;
+            this.listPizzaBaseMenu.GridLines = true;
+            this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(6, 6);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(805, 492);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
+            this.listPizzaBaseMenu.MultiSelect = false;
+            this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
+            this.listPizzaBaseMenu.Size = new System.Drawing.Size(805, 492);
+            this.listPizzaBaseMenu.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listPizzaBaseMenu.TabIndex = 0;
+            this.listPizzaBaseMenu.UseCompatibleStateImageBehavior = false;
+            this.listPizzaBaseMenu.View = System.Windows.Forms.View.Details;
+            this.listPizzaBaseMenu.SelectedIndexChanged += new System.EventHandler(this.listPizzaBaseMenu_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -299,7 +307,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -780,14 +788,14 @@
             this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label15.Location = new System.Drawing.Point(3, 283);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(245, 38);
+            this.label15.Size = new System.Drawing.Size(244, 38);
             this.label15.TabIndex = 14;
             this.label15.Text = "CVC:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // maskedTextBox6
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(254, 286);
+            this.maskedTextBox6.Location = new System.Drawing.Point(253, 286);
             this.maskedTextBox6.Mask = "000";
             this.maskedTextBox6.Name = "maskedTextBox6";
             this.maskedTextBox6.Size = new System.Drawing.Size(337, 35);
@@ -799,14 +807,14 @@
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label14.Location = new System.Drawing.Point(3, 227);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(245, 38);
+            this.label14.Size = new System.Drawing.Size(244, 38);
             this.label14.TabIndex = 12;
             this.label14.Text = "Card Number:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // maskedTextBox5
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(254, 230);
+            this.maskedTextBox5.Location = new System.Drawing.Point(253, 230);
             this.maskedTextBox5.Mask = "0000-0000-0000-0000";
             this.maskedTextBox5.Name = "maskedTextBox5";
             this.maskedTextBox5.Size = new System.Drawing.Size(337, 35);
@@ -818,14 +826,14 @@
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label13.Location = new System.Drawing.Point(3, 171);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(245, 38);
+            this.label13.Size = new System.Drawing.Size(244, 38);
             this.label13.TabIndex = 10;
             this.label13.Text = "Phone Number:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // maskedTextBox4
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(254, 174);
+            this.maskedTextBox4.Location = new System.Drawing.Point(253, 174);
             this.maskedTextBox4.Mask = "(999) 000-0000";
             this.maskedTextBox4.Name = "maskedTextBox4";
             this.maskedTextBox4.Size = new System.Drawing.Size(337, 35);
@@ -837,14 +845,14 @@
             this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label12.Location = new System.Drawing.Point(3, 113);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(245, 38);
+            this.label12.Size = new System.Drawing.Size(244, 38);
             this.label12.TabIndex = 8;
             this.label12.Text = "Address:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // maskedTextBox3
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(254, 116);
+            this.maskedTextBox3.Location = new System.Drawing.Point(253, 116);
             this.maskedTextBox3.Name = "maskedTextBox3";
             this.maskedTextBox3.Size = new System.Drawing.Size(337, 35);
             this.maskedTextBox3.TabIndex = 7;
@@ -855,7 +863,7 @@
             this.label10.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label10.Location = new System.Drawing.Point(3, 57);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(245, 38);
+            this.label10.Size = new System.Drawing.Size(244, 38);
             this.label10.TabIndex = 6;
             this.label10.Text = "Last Name:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -866,21 +874,21 @@
             this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(245, 38);
+            this.label11.Size = new System.Drawing.Size(244, 38);
             this.label11.TabIndex = 1;
             this.label11.Text = "First Name:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(254, 3);
+            this.maskedTextBox1.Location = new System.Drawing.Point(253, 3);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(337, 35);
             this.maskedTextBox1.TabIndex = 4;
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(254, 60);
+            this.maskedTextBox2.Location = new System.Drawing.Point(253, 60);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(337, 35);
             this.maskedTextBox2.TabIndex = 5;
@@ -1062,7 +1070,6 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1103,7 +1110,6 @@
         private Label label2;
         private Label lblWaitTimeTitle;
         private ComboBox comboBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label5;
         private Label label3;
         private Label label4;
@@ -1113,7 +1119,6 @@
         private Button button1;
         private GroupBox groupBox3;
         private ListBox listBox1;
-        private BindingSource bindingSource1;
         private Panel panel3;
         private Label label9;
         private TabPage tabPage1;
@@ -1137,8 +1142,8 @@
         private TabPage tabPage4;
         private Label label16;
         private GroupBox groupBox4;
-        private Label label17;
-        private ListView listView1;
+        private Label lblSelectedBasePizza;
+        private ListView listPizzaBaseMenu;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private Panel panel4;
@@ -1152,5 +1157,6 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Panel panel5;
     }
 }

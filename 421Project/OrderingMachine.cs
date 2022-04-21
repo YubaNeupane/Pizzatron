@@ -10,14 +10,41 @@ namespace MainProgram
 {
     internal class OrderingMachine
     {
-        List<ToppingFromFile> toppingFromFiles;
-        List<PizzaBaseFromFile> pizzaBaseFromFile;
+        private List<ToppingFromFile> toppingFromFiles;
+        private List<PizzaBaseFromFile> pizzaBaseFromFile;
+        private int currentSelectedPizzaBase = -1;
 
         public OrderingMachine()
         {
             FileLoader fileLoader = new FileLoader();
             toppingFromFiles =  fileLoader.getToppingsFromFile();
             pizzaBaseFromFile = fileLoader.getPizzaBaseFromFile();
+        }
+
+        public List<ToppingFromFile> getToppingFromFile()
+        {
+            return toppingFromFiles;
+        }
+        public List<PizzaBaseFromFile> getPizzaBaseFromFile()
+        {
+            return pizzaBaseFromFile;
+        }
+
+        public void setSelectedPizzaBase(int index)
+        {
+            currentSelectedPizzaBase = index;
+        }
+
+        public int GetCurrentSelectedPizzaBase()
+        {
+            return currentSelectedPizzaBase;
+        }
+
+        public PizzaBaseFromFile getSelctedPizzaBase()
+        {
+           
+             return pizzaBaseFromFile[currentSelectedPizzaBase];
+          
         }
     }
 }
