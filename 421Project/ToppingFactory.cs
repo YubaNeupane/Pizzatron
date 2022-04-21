@@ -7,7 +7,7 @@ namespace MainProgram
         //TODO: Make the factory 
         public ToppingIF? getTopping(string toppingName)
         {
-            Type? type = Type.GetType(toppingName);
+            Type? type = Type.GetType("Toppings."+toppingName);
             if(type != null)
             {
                 return (ToppingIF?)Activator.CreateInstance(type);
