@@ -22,7 +22,7 @@ namespace Pizza
             return name;
         }
 
-        public double getPrice()
+        public virtual double getPrice()
         {
             return price;
         }
