@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Toppings
+﻿namespace Toppings
 {
-    internal class Mushrooms:VegetarianTopping
+    internal class Mushrooms : VegetarianTopping
     {
-        public Mushrooms():base()
+        public Mushrooms() : base()
         {
             name = "Mushrooms";
             price = 0.75;

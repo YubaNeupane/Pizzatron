@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Toppings
+﻿namespace Toppings
 {
     internal abstract class Topping : ToppingIF
     {
@@ -35,7 +29,7 @@ namespace Toppings
 
         public void setIsExtra(bool isExtra)
         {
-            this.isExtra=isExtra;
+            this.isExtra = isExtra;
         }
     }
 }

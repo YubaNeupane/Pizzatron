@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Toppings
+﻿namespace Toppings
 {
-    internal abstract class VegetarianTopping:Topping
+    internal abstract class VegetarianTopping : Topping
     {
         protected double extraPrice;
-        public VegetarianTopping():base(){
+        public VegetarianTopping() : base()
+        {
             extraPrice = 0.75;
             typeName = "Vegetatian";
         }

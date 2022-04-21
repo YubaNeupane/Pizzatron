@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Toppings;
+﻿using Toppings;
 
 namespace Pizza
 {
     internal class PizzaWrapper : Pizza
     {
-        
+
         private PizzaIF pizza;
         private ToppingIF topping;
 
