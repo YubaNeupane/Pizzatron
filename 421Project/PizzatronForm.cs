@@ -9,6 +9,7 @@ namespace _421Project
         public PizzatronForm()
         {
             InitializeComponent();
+            OrderingMachine orderingMachine = new OrderingMachine();
 
         }
 
