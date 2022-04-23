@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Utility;
 using Pizza;
 using Toppings;
+using PizzaFilters;
 
 namespace MainProgram
 {
@@ -17,6 +18,7 @@ namespace MainProgram
         private int currentSelectedPizzaBase = -1;
         private PizzaIF? currentPizza;
         private ToppingFactory toppingFactory;
+        private PizzaFilterIF toppingFilter;
 
         public OrderingMachine()
         {
@@ -24,6 +26,7 @@ namespace MainProgram
             toppingFromFiles =  fileLoader.getToppingsFromFile();
             pizzaBaseFromFile = fileLoader.getPizzaBaseFromFile();
             toppingFactory = new ToppingFactory();
+            toppingFilter = new NoFilter(toppingFromFiles);
         }
 
         public List<ToppingFromFile> getToppingFromFile()
@@ -74,6 +77,26 @@ namespace MainProgram
             }
         }
 
+
+        public List<ToppingFromFile> getFilteredToppings(string filterType)
+        {
+            switch (filterType)
+            {
+                case "Meat":
+                    toppingFilter = new MeatOnlyFilter(toppingFilter);
+                    break;
+                case"Vegetarian":
+                    toppingFilter = new VegetarianOnlyFilter(toppingFilter);
+                    break;
+                case "Vegan":
+                    toppingFilter = new VeganOnlyFilter(toppingFilter);
+                    break;
+               default:
+                    toppingFilter = new NoFilter(toppingFromFiles);
+                    break;
+            }
+            return toppingFilter.processTopping();
+        }
 
 
         public void addTopingToPizza(string toppingName, bool isExtra)
