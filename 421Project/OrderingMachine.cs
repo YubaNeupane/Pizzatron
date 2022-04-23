@@ -48,17 +48,16 @@ namespace MainProgram
 
         public void createPizza(string pizzaName)
         {
-            switch (pizzaName)
+            string[] splitPizzaName = pizzaName.Split(" ");
+            pizzaName = "";
+            foreach(string s in splitPizzaName)
             {
-                case "Plain Pizza":
-                    currentPizza = new PlainPizza();
-                    break;
-                case "Pesto Pizza":
-                    currentPizza = new PestoPizza();
-                    break;
-                case "Margherita Pizza":
-                    currentPizza = new MargheritaPizza();
-                    break;
+                pizzaName += s;
+            }
+            Type? type = Type.GetType("Pizza." + pizzaName);
+            if (type != null)
+            {
+                currentPizza = (PizzaIF?)Activator.CreateInstance(type);
             }
         }
 
