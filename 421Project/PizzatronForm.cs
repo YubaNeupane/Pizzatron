@@ -8,7 +8,8 @@ namespace _421Project
     public partial class PizzatronForm : Form
     {
         OrderingMachine orderingMachine;
-        
+        Dictionary<string,bool> selectedToppings = new Dictionary<string,bool>();
+        ListViewItem? selectedItem;
 
         public PizzatronForm()
         {
@@ -59,11 +60,18 @@ namespace _421Project
         {
             PizzaBaseFromFile pizzaBaseFromFile = orderingMachine.getSelctedPizzaBase();
             lblSelectedBasePizza.Text = pizzaBaseFromFile.Name + " \n" + pizzaBaseFromFile.price.ToString("C2");
+            selectedPizzaLabelGroup.Text = pizzaBaseFromFile.Name.ToUpper();
         }
 
         private void updateSelectedTopping()
         {
-
+            selectedItemList.Items.Clear();
+            foreach (KeyValuePair<string, bool> item in selectedToppings)
+            {
+                String output = item.Key;
+                output += item.Value ? "\t(E)" : "";
+                selectedItemList.Items.Add(output);
+            }
         }
 
         private void listPizzaBaseMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,6 +80,11 @@ namespace _421Project
             {
                 orderingMachine.setSelectedPizzaBase(listPizzaBaseMenu.SelectedIndices[0]);
                 updateSelectedPizzaBase();
+                toppingPanel.Enabled = true;
+            }
+            else
+            {
+                toppingPanel.Enabled = false;
             }
         }
 
@@ -79,12 +92,32 @@ namespace _421Project
         {
             if (toppingListView.SelectedIndices.Count >= 1)
             {
+                selectedItem = toppingListView.SelectedItems[toppingListView.SelectedIndices.Count - 1];
 
+                btnSelectToppingItem.Enabled = true;
             }
             else
             {
-
+                btnSelectToppingItem.Enabled = false;
+                selectedItem = null;
             }
+        }
+
+        private void btnSelectToppingItem_Click(object sender, EventArgs e)
+        {
+            if (selectedItem == null) return;
+            string name = selectedItem.SubItems[1].Text;
+            bool isExtra = selectedItem.Checked;
+            if (selectedToppings.ContainsKey(name))
+            {
+                selectedToppings[name] = isExtra;
+            }
+            else
+            {
+                selectedToppings.Add(name, isExtra);
+            }
+            toppingListView.SelectedItems.Clear();
+            updateSelectedTopping();
         }
     }
 }
