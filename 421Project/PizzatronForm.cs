@@ -20,6 +20,30 @@ namespace _421Project
 
         }
 
+        private void DisplayFilterItems(string filterItem)
+        {
+            toppingListView.Items.Clear();
+
+            foreach (ToppingFromFile topping in orderingMachine.getFilteredToppings(filterItem.Split(" ")[0]))
+            {
+                ListViewItem listViewItem = new ListViewItem("");
+                listViewItem.SubItems.Add(topping.Name);
+
+
+
+                String types = "";
+                foreach (String type in topping.type)
+                {
+                    types += " " + type;
+                }
+                listViewItem.SubItems.Add(types);
+                listViewItem.SubItems.Add(topping.price.ToString("C2"));
+
+
+                toppingListView.Items.Add(listViewItem);
+            }
+        }
+
         private void displayMenu()
         {
 
@@ -239,6 +263,12 @@ namespace _421Project
                 btnShoppingCartToppingRemove.Enabled = true;
 
             }
+        }
+
+        private void filterDropDownMenu_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine(filterDropDownMenu.Text);
+            DisplayFilterItems(filterDropDownMenu.Text);
         }
     }
 }
