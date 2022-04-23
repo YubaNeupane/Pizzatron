@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzatronForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tabCart = new System.Windows.Forms.TabControl();
+            this.mainTabControl = new System.Windows.Forms.TabControl();
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pizzaTabMenu = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -73,10 +73,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.shoppingChartPizzaName = new System.Windows.Forms.GroupBox();
+            this.btnShoppingCartToppingRemove = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.shoppingCartListBox = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -125,9 +125,9 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.tabCart.SuspendLayout();
+            this.mainTabControl.SuspendLayout();
             this.tabOrder.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.pizzaTabMenu.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -144,7 +144,7 @@
             this.splitContainer2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.shoppingChartPizzaName.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -161,38 +161,38 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.tabCart);
+            this.panel1.Controls.Add(this.mainTabControl);
             this.panel1.Location = new System.Drawing.Point(-2, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1235, 728);
             this.panel1.TabIndex = 0;
             // 
-            // tabCart
+            // mainTabControl
             // 
-            this.tabCart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.mainTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabCart.Controls.Add(this.tabOrder);
-            this.tabCart.Controls.Add(this.tabPage2);
-            this.tabCart.Controls.Add(this.tabPage1);
-            this.tabCart.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.tabCart.HotTrack = true;
-            this.tabCart.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.tabCart.ItemSize = new System.Drawing.Size(300, 35);
-            this.tabCart.Location = new System.Drawing.Point(-15, 0);
-            this.tabCart.Multiline = true;
-            this.tabCart.Name = "tabCart";
-            this.tabCart.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabCart.SelectedIndex = 0;
-            this.tabCart.Size = new System.Drawing.Size(1257, 675);
-            this.tabCart.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabCart.TabIndex = 0;
+            this.mainTabControl.Controls.Add(this.tabOrder);
+            this.mainTabControl.Controls.Add(this.tabPage2);
+            this.mainTabControl.Controls.Add(this.tabPage1);
+            this.mainTabControl.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.mainTabControl.HotTrack = true;
+            this.mainTabControl.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.mainTabControl.ItemSize = new System.Drawing.Size(300, 35);
+            this.mainTabControl.Location = new System.Drawing.Point(-15, 0);
+            this.mainTabControl.Multiline = true;
+            this.mainTabControl.Name = "mainTabControl";
+            this.mainTabControl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mainTabControl.SelectedIndex = 0;
+            this.mainTabControl.Size = new System.Drawing.Size(1257, 675);
+            this.mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.mainTabControl.TabIndex = 0;
             // 
             // tabOrder
             // 
             this.tabOrder.BackColor = System.Drawing.Color.LightCoral;
             this.tabOrder.Controls.Add(this.label16);
-            this.tabOrder.Controls.Add(this.tabControl1);
+            this.tabOrder.Controls.Add(this.pizzaTabMenu);
             this.tabOrder.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.tabOrder.Location = new System.Drawing.Point(4, 39);
             this.tabOrder.Name = "tabOrder";
@@ -213,17 +213,17 @@
             this.label16.Text = "Pizzatron";
             this.label16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // tabControl1
+            // pizzaTabMenu
             // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(25, 79);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1208, 547);
-            this.tabControl1.TabIndex = 0;
+            this.pizzaTabMenu.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.pizzaTabMenu.Controls.Add(this.tabPage3);
+            this.pizzaTabMenu.Controls.Add(this.tabPage4);
+            this.pizzaTabMenu.Location = new System.Drawing.Point(25, 79);
+            this.pizzaTabMenu.Multiline = true;
+            this.pizzaTabMenu.Name = "pizzaTabMenu";
+            this.pizzaTabMenu.SelectedIndex = 0;
+            this.pizzaTabMenu.Size = new System.Drawing.Size(1208, 547);
+            this.pizzaTabMenu.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -278,8 +278,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem6,
+            listViewItem7});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -307,7 +307,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -358,6 +358,7 @@
             this.btnDoneSelecting.TabIndex = 2;
             this.btnDoneSelecting.Text = "Done";
             this.btnDoneSelecting.UseVisualStyleBackColor = true;
+            this.btnDoneSelecting.Click += new System.EventHandler(this.btnDoneSelecting_Click);
             // 
             // btnRemoveSelectedItem
             // 
@@ -391,13 +392,13 @@
             this.columnHeader6});
             this.toppingListView.FullRowSelect = true;
             this.toppingListView.GridLines = true;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
             this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
             this.toppingListView.Location = new System.Drawing.Point(3, 3);
             this.toppingListView.Name = "toppingListView";
             this.toppingListView.Size = new System.Drawing.Size(790, 435);
@@ -496,7 +497,7 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Controls.Add(this.shoppingChartPizzaName);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel1.Controls.Add(this.progressBar1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -505,29 +506,30 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(615, 481);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // groupBox1
+            // shoppingChartPizzaName
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(609, 269);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Plain Pizza";
+            this.shoppingChartPizzaName.Controls.Add(this.btnShoppingCartToppingRemove);
+            this.shoppingChartPizzaName.Controls.Add(this.groupBox3);
+            this.shoppingChartPizzaName.Location = new System.Drawing.Point(3, 3);
+            this.shoppingChartPizzaName.Name = "shoppingChartPizzaName";
+            this.shoppingChartPizzaName.Size = new System.Drawing.Size(609, 269);
+            this.shoppingChartPizzaName.TabIndex = 0;
+            this.shoppingChartPizzaName.TabStop = false;
+            this.shoppingChartPizzaName.Text = "Plain Pizza";
             // 
-            // button1
+            // btnShoppingCartToppingRemove
             // 
-            this.button1.Location = new System.Drawing.Point(385, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 47);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Remove Selected";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnShoppingCartToppingRemove.Location = new System.Drawing.Point(385, 130);
+            this.btnShoppingCartToppingRemove.Name = "btnShoppingCartToppingRemove";
+            this.btnShoppingCartToppingRemove.Size = new System.Drawing.Size(217, 47);
+            this.btnShoppingCartToppingRemove.TabIndex = 1;
+            this.btnShoppingCartToppingRemove.Text = "Remove Selected";
+            this.btnShoppingCartToppingRemove.UseVisualStyleBackColor = true;
+            this.btnShoppingCartToppingRemove.Click += new System.EventHandler(this.btnShoppingCartToppingRemove_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.shoppingCartListBox);
             this.groupBox3.Location = new System.Drawing.Point(39, 34);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(340, 225);
@@ -535,14 +537,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Toppings";
             // 
-            // listBox1
+            // shoppingCartListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 30;
-            this.listBox1.Location = new System.Drawing.Point(6, 34);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(328, 184);
-            this.listBox1.TabIndex = 0;
+            this.shoppingCartListBox.FormattingEnabled = true;
+            this.shoppingCartListBox.ItemHeight = 30;
+            this.shoppingCartListBox.Location = new System.Drawing.Point(6, 34);
+            this.shoppingCartListBox.Name = "shoppingCartListBox";
+            this.shoppingCartListBox.Size = new System.Drawing.Size(328, 184);
+            this.shoppingCartListBox.TabIndex = 0;
+            this.shoppingCartListBox.SelectedIndexChanged += new System.EventHandler(this.shoppingCartListBox_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -729,6 +732,7 @@
             this.btnClearCart.TabIndex = 0;
             this.btnClearCart.Text = "Clear Cart";
             this.btnClearCart.UseVisualStyleBackColor = true;
+            this.btnClearCart.Click += new System.EventHandler(this.btnClearCart_Click);
             // 
             // panel3
             // 
@@ -1047,9 +1051,9 @@
             this.Name = "PizzatronForm";
             this.Text = "Pizzatron";
             this.panel1.ResumeLayout(false);
-            this.tabCart.ResumeLayout(false);
+            this.mainTabControl.ResumeLayout(false);
             this.tabOrder.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.pizzaTabMenu.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -1066,7 +1070,7 @@
             this.splitContainer2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.shoppingChartPizzaName.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1086,7 +1090,7 @@
         #endregion
 
         private Panel panel1;
-        private TabControl tabCart;
+        private TabControl mainTabControl;
         private TabPage tabOrder;
         private TabPage tabPage2;
         private StatusStrip statusStrip1;
@@ -1094,7 +1098,7 @@
         private SplitContainer splitContainer2;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
-        private GroupBox groupBox1;
+        private GroupBox shoppingChartPizzaName;
         private Button btnBuyNow;
         private Button btnClearCart;
         private ToolStripStatusLabel toolStripStatusLabel1;
@@ -1124,9 +1128,9 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private Button button1;
+        private Button btnShoppingCartToppingRemove;
         private GroupBox groupBox3;
-        private ListBox listBox1;
+        private ListBox shoppingCartListBox;
         private Panel panel3;
         private Label label9;
         private TabPage tabPage1;
@@ -1145,7 +1149,7 @@
         private MaskedTextBox maskedTextBox5;
         private Label label15;
         private MaskedTextBox maskedTextBox6;
-        private TabControl tabControl1;
+        private TabControl pizzaTabMenu;
         private TabPage tabPage3;
         private TabPage tabPage4;
         private Label label16;

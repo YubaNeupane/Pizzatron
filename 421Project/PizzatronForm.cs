@@ -55,7 +55,6 @@ namespace _421Project
             }
         }
 
-
         private void updateSelectedPizzaBase()
         {
             PizzaBaseFromFile pizzaBaseFromFile = orderingMachine.getSelctedPizzaBase();
@@ -75,6 +74,22 @@ namespace _421Project
             if(selectedItemList.Items.Count == 0)
             {
                 btnDoneSelecting.Enabled = false;
+
+            }
+        }
+        private void updateShoppingCartTopping()
+        {
+            shoppingChartPizzaName.Text = orderingMachine.getSelctedPizzaBase().Name.ToString().ToUpper();
+            shoppingCartListBox.Items.Clear();
+            foreach (KeyValuePair<string, bool> item in selectedToppings)
+            {
+                String output = item.Key;
+                output += item.Value ? "\t(E)" : "";
+                shoppingCartListBox.Items.Add(output);
+            }
+            if (selectedItemList.Items.Count == 1)
+            {
+                btnShoppingCartToppingRemove.Enabled = false;
 
             }
         }
@@ -152,6 +167,57 @@ namespace _421Project
             selectedToppings.Remove(selectedItem);
             updateSelectedTopping();
             btnRemoveSelectedItem.Enabled = false;
+        }
+
+        private void btnDoneSelecting_Click(object sender, EventArgs e)
+        {
+
+            
+            mainTabControl.SelectedIndex = 1;
+            pizzaTabMenu.Enabled = false;
+
+            updateShoppingCartTopping();
+
+
+        }
+
+        private void btnClearCart_Click(object sender, EventArgs e)
+        {
+            mainTabControl.SelectedIndex = 0;
+            pizzaTabMenu.Enabled = true;
+            pizzaTabMenu.SelectTab(0);
+            updateSelectedPizzaBase();
+            selectedToppings.Clear();
+            updateSelectedTopping();
+
+        }
+
+        private void btnShoppingCartToppingRemove_Click(object sender, EventArgs e)
+        {
+            string selectedItem = shoppingCartListBox.Text.ToString();
+            if (selectedItem.IndexOf("(") > 0)
+            {
+                selectedItem = selectedItem.Substring(0, selectedItem.IndexOf("(")).Trim();
+            }
+            else
+            {
+                selectedItem = selectedItem.Trim();
+            }
+            selectedToppings.Remove(selectedItem);
+            updateShoppingCartTopping();
+        }
+
+        private void shoppingCartListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (shoppingCartListBox.Items.Count <= 1)
+            {
+                btnShoppingCartToppingRemove.Enabled = false;
+            }
+            else
+            {
+                btnShoppingCartToppingRemove.Enabled = true;
+
+            }
         }
     }
 }
