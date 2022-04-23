@@ -39,12 +39,10 @@ namespace MainProgram
         {
             return currentSelectedPizzaBase;
         }
-
         public PizzaBaseFromFile getSelctedPizzaBase()
         {
-           
              return pizzaBaseFromFile[currentSelectedPizzaBase];
-          
         }
+
     }
 }

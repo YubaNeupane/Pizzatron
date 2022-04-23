@@ -21,6 +21,7 @@ namespace _421Project
 
         private void displayMenu()
         {
+
             listPizzaBaseMenu.Items.Clear();
             foreach(PizzaBaseFromFile pizzaItem in orderingMachine.getPizzaBaseFromFile())
             {
@@ -30,8 +31,28 @@ namespace _421Project
                 listPizzaBaseMenu.Items.Add(listViewItem);
              
             }
-        }
 
+            toppingListView.Items.Clear();
+            
+            foreach(ToppingFromFile topping in orderingMachine.getToppingFromFile())
+            {
+                ListViewItem listViewItem = new ListViewItem("");
+                listViewItem.SubItems.Add(topping.Name);
+
+
+
+                String types = "";
+                foreach(String type in topping.type)
+                {
+                    types += " " + type;
+                }
+                listViewItem.SubItems.Add(types);
+                listViewItem.SubItems.Add(topping.price.ToString("C2"));
+
+
+                toppingListView.Items.Add(listViewItem);
+            }
+        }
 
 
         private void updateSelectedPizzaBase()
@@ -45,14 +66,24 @@ namespace _421Project
 
         }
 
-     
-
         private void listPizzaBaseMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(listPizzaBaseMenu.SelectedIndices.Count == 1)
             {
                 orderingMachine.setSelectedPizzaBase(listPizzaBaseMenu.SelectedIndices[0]);
                 updateSelectedPizzaBase();
+            }
+        }
+
+        private void toppingListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (toppingListView.SelectedIndices.Count >= 1)
+            {
+
+            }
+            else
+            {
+
             }
         }
     }

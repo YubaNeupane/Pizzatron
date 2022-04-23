@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzatronForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabCart = new System.Windows.Forms.TabControl();
@@ -56,17 +56,17 @@
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.toppingPanel = new System.Windows.Forms.Panel();
+            this.btnSelectItem = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.toppingListView = new System.Windows.Forms.ListView();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -131,7 +131,7 @@
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.toppingPanel.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -278,8 +278,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem26,
-            listViewItem27});
+            listViewItem1,
+            listViewItem2});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -303,7 +303,7 @@
             // tabPage4
             // 
             this.tabPage4.AutoScroll = true;
-            this.tabPage4.Controls.Add(this.panel4);
+            this.tabPage4.Controls.Add(this.toppingPanel);
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -312,34 +312,33 @@
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // panel4
+            // toppingPanel
             // 
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.groupBox5);
-            this.panel4.Controls.Add(this.listView2);
-            this.panel4.Enabled = false;
-            this.panel4.Location = new System.Drawing.Point(6, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1188, 492);
-            this.panel4.TabIndex = 0;
+            this.toppingPanel.Controls.Add(this.btnSelectItem);
+            this.toppingPanel.Controls.Add(this.groupBox5);
+            this.toppingPanel.Controls.Add(this.toppingListView);
+            this.toppingPanel.Location = new System.Drawing.Point(6, 6);
+            this.toppingPanel.Name = "toppingPanel";
+            this.toppingPanel.Size = new System.Drawing.Size(1188, 492);
+            this.toppingPanel.TabIndex = 0;
             // 
-            // button5
+            // btnSelectItem
             // 
-            this.button5.Location = new System.Drawing.Point(3, 444);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(790, 43);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Add Selected";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSelectItem.Location = new System.Drawing.Point(3, 444);
+            this.btnSelectItem.Name = "btnSelectItem";
+            this.btnSelectItem.Size = new System.Drawing.Size(790, 43);
+            this.btnSelectItem.TabIndex = 2;
+            this.btnSelectItem.Text = "Add Selected";
+            this.btnSelectItem.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.button6);
             this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.listBox2);
-            this.groupBox5.Location = new System.Drawing.Point(815, 3);
+            this.groupBox5.Location = new System.Drawing.Point(799, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(370, 484);
+            this.groupBox5.Size = new System.Drawing.Size(386, 484);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Selected Base";
@@ -371,51 +370,52 @@
             this.listBox2.Size = new System.Drawing.Size(366, 334);
             this.listBox2.TabIndex = 0;
             // 
-            // listView2
+            // toppingListView
             // 
-            this.listView2.CheckBoxes = true;
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.toppingListView.CheckBoxes = true;
+            this.toppingListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
-            this.columnHeader6,
             this.columnHeader4,
-            this.columnHeader5});
-            this.listView2.FullRowSelect = true;
-            this.listView2.GridLines = true;
-            listViewItem28.StateImageIndex = 0;
-            listViewItem29.StateImageIndex = 0;
-            listViewItem30.StateImageIndex = 0;
-            this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem28,
-            listViewItem29,
-            listViewItem30});
-            this.listView2.Location = new System.Drawing.Point(3, 3);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(790, 435);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.columnHeader5,
+            this.columnHeader6});
+            this.toppingListView.FullRowSelect = true;
+            this.toppingListView.GridLines = true;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
+            this.toppingListView.Location = new System.Drawing.Point(3, 3);
+            this.toppingListView.Name = "toppingListView";
+            this.toppingListView.Size = new System.Drawing.Size(790, 435);
+            this.toppingListView.TabIndex = 0;
+            this.toppingListView.UseCompatibleStateImageBehavior = false;
+            this.toppingListView.View = System.Windows.Forms.View.Details;
+            this.toppingListView.SelectedIndexChanged += new System.EventHandler(this.toppingListView_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Extra";
             this.columnHeader3.Width = 100;
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.DisplayIndex = 2;
-            this.columnHeader6.Text = "Type";
-            this.columnHeader6.Width = 150;
-            // 
             // columnHeader4
             // 
-            this.columnHeader4.DisplayIndex = 1;
             this.columnHeader4.Text = "Name";
             this.columnHeader4.Width = 300;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Price";
+            this.columnHeader5.DisplayIndex = 3;
+            this.columnHeader5.Text = "Type";
             this.columnHeader5.Width = 200;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.DisplayIndex = 2;
+            this.columnHeader6.Text = "Price";
+            this.columnHeader6.Width = 150;
             // 
             // tabPage2
             // 
@@ -1042,7 +1042,7 @@
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.toppingPanel.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1143,12 +1143,12 @@
         private ListView listPizzaBaseMenu;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private Panel panel4;
+        private Panel toppingPanel;
         private GroupBox groupBox5;
         private Button button4;
         private ListBox listBox2;
-        private ListView listView2;
-        private Button button5;
+        private ListView toppingListView;
+        private Button btnSelectItem;
         private Button button6;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
