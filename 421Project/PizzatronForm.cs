@@ -177,6 +177,7 @@ namespace _421Project
             pizzaTabMenu.Enabled = false;
 
             updateShoppingCartTopping();
+            orderingMachine.createPizza(orderingMachine.getSelctedPizzaBase().Name);
 
 
         }
@@ -189,6 +190,7 @@ namespace _421Project
             updateSelectedPizzaBase();
             selectedToppings.Clear();
             updateSelectedTopping();
+            updateShoppingCartTopping();
 
         }
 

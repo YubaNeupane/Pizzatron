@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utility;
+using Pizza;
 
 namespace MainProgram
 {
@@ -13,6 +14,7 @@ namespace MainProgram
         private List<ToppingFromFile> toppingFromFiles;
         private List<PizzaBaseFromFile> pizzaBaseFromFile;
         private int currentSelectedPizzaBase = -1;
+        private PizzaIF? currentPizza;
 
         public OrderingMachine()
         {
@@ -42,6 +44,22 @@ namespace MainProgram
         public PizzaBaseFromFile getSelctedPizzaBase()
         {
              return pizzaBaseFromFile[currentSelectedPizzaBase];
+        }
+
+        public void createPizza(string pizzaName)
+        {
+            switch (pizzaName)
+            {
+                case "Plain Pizza":
+                    currentPizza = new PlainPizza();
+                    break;
+                case "Pesto Pizza":
+                    currentPizza = new PestoPizza();
+                    break;
+                case "Margherita Pizza":
+                    currentPizza = new MargheritaPizza();
+                    break;
+            }
         }
 
     }
