@@ -28,21 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzatronForm));
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.tabOrder = new System.Windows.Forms.TabPage();
@@ -114,13 +113,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripLabelSelectedCurrency = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripOptionMenu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.currencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.euroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kuwaitiDinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indianRupeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
@@ -278,8 +270,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7});
+            listViewItem1,
+            listViewItem2});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -307,7 +299,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -392,13 +384,13 @@
             this.columnHeader6});
             this.toppingListView.FullRowSelect = true;
             this.toppingListView.GridLines = true;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
-            listViewItem10.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
             this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.toppingListView.Location = new System.Drawing.Point(3, 3);
             this.toppingListView.Name = "toppingListView";
             this.toppingListView.Size = new System.Drawing.Size(790, 435);
@@ -929,9 +921,7 @@
             this.statusStrip1.BackColor = System.Drawing.Color.Silver;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
-            this.toolStripStatusLabel1,
-            this.toolStripLabelSelectedCurrency,
-            this.toolStripOptionMenu});
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 675);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1232, 22);
@@ -950,61 +940,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // toolStripLabelSelectedCurrency
-            // 
-            this.toolStripLabelSelectedCurrency.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.toolStripLabelSelectedCurrency.Name = "toolStripLabelSelectedCurrency";
-            this.toolStripLabelSelectedCurrency.Size = new System.Drawing.Size(140, 17);
-            this.toolStripLabelSelectedCurrency.Text = "Selected Currency: USD";
-            // 
-            // toolStripOptionMenu
-            // 
-            this.toolStripOptionMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripOptionMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currencyToolStripMenuItem});
-            this.toolStripOptionMenu.Image = ((System.Drawing.Image)(resources.GetObject("toolStripOptionMenu.Image")));
-            this.toolStripOptionMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripOptionMenu.Name = "toolStripOptionMenu";
-            this.toolStripOptionMenu.Size = new System.Drawing.Size(57, 20);
-            this.toolStripOptionMenu.Text = "Option";
-            this.toolStripOptionMenu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripOptionMenu.ToolTipText = "Options";
-            // 
-            // currencyToolStripMenuItem
-            // 
-            this.currencyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.euroToolStripMenuItem,
-            this.kuwaitiDinarToolStripMenuItem,
-            this.indianRupeeToolStripMenuItem});
-            this.currencyToolStripMenuItem.Name = "currencyToolStripMenuItem";
-            this.currencyToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
-            this.currencyToolStripMenuItem.Text = "Currency";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
-            this.toolStripMenuItem1.Text = "USD";
-            // 
-            // euroToolStripMenuItem
-            // 
-            this.euroToolStripMenuItem.Name = "euroToolStripMenuItem";
-            this.euroToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.euroToolStripMenuItem.Text = "Euro";
-            // 
-            // kuwaitiDinarToolStripMenuItem
-            // 
-            this.kuwaitiDinarToolStripMenuItem.Name = "kuwaitiDinarToolStripMenuItem";
-            this.kuwaitiDinarToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.kuwaitiDinarToolStripMenuItem.Text = "Kuwaiti Dinar";
-            // 
-            // indianRupeeToolStripMenuItem
-            // 
-            this.indianRupeeToolStripMenuItem.Name = "indianRupeeToolStripMenuItem";
-            this.indianRupeeToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.indianRupeeToolStripMenuItem.Text = "Indian Rupee";
             // 
             // tableLayoutPanel2
             // 
@@ -1103,13 +1038,6 @@
         private Button btnClearCart;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripProgressBar toolStripProgressBar1;
-        private ToolStripDropDownButton toolStripOptionMenu;
-        private ToolStripMenuItem currencyToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripStatusLabel toolStripLabelSelectedCurrency;
-        private ToolStripMenuItem euroToolStripMenuItem;
-        private ToolStripMenuItem kuwaitiDinarToolStripMenuItem;
-        private ToolStripMenuItem indianRupeeToolStripMenuItem;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
