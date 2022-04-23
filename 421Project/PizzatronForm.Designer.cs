@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzatronForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabCart = new System.Windows.Forms.TabControl();
@@ -59,8 +59,8 @@
             this.toppingPanel = new System.Windows.Forms.Panel();
             this.btnSelectToppingItem = new System.Windows.Forms.Button();
             this.selectedPizzaLabelGroup = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnDoneSelecting = new System.Windows.Forms.Button();
+            this.btnRemoveSelectedItem = new System.Windows.Forms.Button();
             this.selectedItemList = new System.Windows.Forms.ListBox();
             this.toppingListView = new System.Windows.Forms.ListView();
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
@@ -278,8 +278,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7});
+            listViewItem1,
+            listViewItem2});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -338,8 +338,8 @@
             // 
             // selectedPizzaLabelGroup
             // 
-            this.selectedPizzaLabelGroup.Controls.Add(this.button6);
-            this.selectedPizzaLabelGroup.Controls.Add(this.button4);
+            this.selectedPizzaLabelGroup.Controls.Add(this.btnDoneSelecting);
+            this.selectedPizzaLabelGroup.Controls.Add(this.btnRemoveSelectedItem);
             this.selectedPizzaLabelGroup.Controls.Add(this.selectedItemList);
             this.selectedPizzaLabelGroup.Location = new System.Drawing.Point(799, 3);
             this.selectedPizzaLabelGroup.Name = "selectedPizzaLabelGroup";
@@ -348,23 +348,28 @@
             this.selectedPizzaLabelGroup.TabStop = false;
             this.selectedPizzaLabelGroup.Text = "Selected Base";
             // 
-            // button6
+            // btnDoneSelecting
             // 
-            this.button6.Location = new System.Drawing.Point(14, 438);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(366, 54);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Done";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnDoneSelecting.Enabled = false;
+            this.btnDoneSelecting.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDoneSelecting.Location = new System.Drawing.Point(14, 424);
+            this.btnDoneSelecting.Name = "btnDoneSelecting";
+            this.btnDoneSelecting.Size = new System.Drawing.Size(366, 54);
+            this.btnDoneSelecting.TabIndex = 2;
+            this.btnDoneSelecting.Text = "Done";
+            this.btnDoneSelecting.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnRemoveSelectedItem
             // 
-            this.button4.Location = new System.Drawing.Point(14, 381);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(366, 54);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Remove";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedItem.Enabled = false;
+            this.btnRemoveSelectedItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRemoveSelectedItem.Location = new System.Drawing.Point(14, 351);
+            this.btnRemoveSelectedItem.Name = "btnRemoveSelectedItem";
+            this.btnRemoveSelectedItem.Size = new System.Drawing.Size(366, 54);
+            this.btnRemoveSelectedItem.TabIndex = 1;
+            this.btnRemoveSelectedItem.Text = "Remove";
+            this.btnRemoveSelectedItem.UseVisualStyleBackColor = true;
+            this.btnRemoveSelectedItem.Click += new System.EventHandler(this.btnRemoveSelectedItem_Click);
             // 
             // selectedItemList
             // 
@@ -372,8 +377,9 @@
             this.selectedItemList.ItemHeight = 30;
             this.selectedItemList.Location = new System.Drawing.Point(14, 41);
             this.selectedItemList.Name = "selectedItemList";
-            this.selectedItemList.Size = new System.Drawing.Size(366, 334);
+            this.selectedItemList.Size = new System.Drawing.Size(366, 304);
             this.selectedItemList.TabIndex = 0;
+            this.selectedItemList.SelectedIndexChanged += new System.EventHandler(this.selectedItemList_SelectedIndexChanged);
             // 
             // toppingListView
             // 
@@ -385,13 +391,13 @@
             this.columnHeader6});
             this.toppingListView.FullRowSelect = true;
             this.toppingListView.GridLines = true;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
-            listViewItem10.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
             this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.toppingListView.Location = new System.Drawing.Point(3, 3);
             this.toppingListView.Name = "toppingListView";
             this.toppingListView.Size = new System.Drawing.Size(790, 435);
@@ -1150,11 +1156,11 @@
         private ColumnHeader columnHeader2;
         private Panel toppingPanel;
         private GroupBox selectedPizzaLabelGroup;
-        private Button button4;
+        private Button btnRemoveSelectedItem;
         private ListBox selectedItemList;
         private ListView toppingListView;
         private Button btnSelectToppingItem;
-        private Button button6;
+        private Button btnDoneSelecting;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;

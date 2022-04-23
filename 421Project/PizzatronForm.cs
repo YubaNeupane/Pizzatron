@@ -72,6 +72,11 @@ namespace _421Project
                 output += item.Value ? "\t(E)" : "";
                 selectedItemList.Items.Add(output);
             }
+            if(selectedItemList.Items.Count == 0)
+            {
+                btnDoneSelecting.Enabled = false;
+
+            }
         }
 
         private void listPizzaBaseMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,9 +120,38 @@ namespace _421Project
             else
             {
                 selectedToppings.Add(name, isExtra);
+                btnDoneSelecting.Enabled = true;
             }
             toppingListView.SelectedItems.Clear();
             updateSelectedTopping();
+        }
+
+        private void selectedItemList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(selectedItemList.SelectedItems.Count >= 1)
+            {
+                btnRemoveSelectedItem.Enabled = true;
+            }
+            else
+            {
+                btnRemoveSelectedItem.Enabled = false;
+            }
+        }
+
+        private void btnRemoveSelectedItem_Click(object sender, EventArgs e)
+        {
+            string selectedItem = selectedItemList.Text.ToString();
+            if(selectedItem.IndexOf("(") > 0)
+            {
+                selectedItem = selectedItem.Substring(0, selectedItem.IndexOf("(")).Trim();
+            }
+            else
+            {
+                selectedItem = selectedItem.Trim();
+            }
+            selectedToppings.Remove(selectedItem);
+            updateSelectedTopping();
+            btnRemoveSelectedItem.Enabled = false;
         }
     }
 }
