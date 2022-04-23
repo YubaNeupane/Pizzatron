@@ -68,6 +68,10 @@ namespace MainProgram
             {
                 currentPizza = (PizzaIF?)Activator.CreateInstance(type);
             }
+            else
+            {
+                currentPizza = null;
+            }
         }
 
 

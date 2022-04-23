@@ -207,6 +207,8 @@ namespace _421Project
             selectedToppings.Clear();
             updateSelectedTopping();
             updateShoppingCartTopping();
+            orderingMachine.createPizza("");
+            updatePrice();
 
         }
 

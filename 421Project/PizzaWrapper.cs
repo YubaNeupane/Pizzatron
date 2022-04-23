@@ -14,7 +14,6 @@ namespace Pizza
             this.topping = topping;
         }
 
-        //TODO: FIX GET PRICE!
         public override double getPrice()
         {
             return pizza.getPrice() + topping.getPrice();
