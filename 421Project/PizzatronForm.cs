@@ -233,6 +233,7 @@ namespace _421Project
             updateShoppingCartTopping();
             orderingMachine.createPizza("");
             updatePrice();
+            filterDropDownMenu.Text = "None";
 
         }
 
@@ -267,7 +268,6 @@ namespace _421Project
 
         private void filterDropDownMenu_SelectedValueChanged(object sender, EventArgs e)
         {
-            Debug.WriteLine(filterDropDownMenu.Text);
             DisplayFilterItems(filterDropDownMenu.Text);
         }
     }
