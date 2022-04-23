@@ -82,9 +82,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.lblTotalCost = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -307,7 +307,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -569,9 +569,9 @@
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label7, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label8, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblSubtotal, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lblTax, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblTotalCost, 1, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(307, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -614,38 +614,38 @@
             this.label4.Text = "Tax (7%):";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // lblSubtotal
             // 
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label6.Location = new System.Drawing.Point(152, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 55);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "$0.00";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSubtotal.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblSubtotal.Location = new System.Drawing.Point(152, 0);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(143, 55);
+            this.lblSubtotal.TabIndex = 4;
+            this.lblSubtotal.Text = "$0.00";
+            this.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label7
+            // lblTax
             // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label7.Location = new System.Drawing.Point(152, 55);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 55);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "$0.00";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTax.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTax.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblTax.Location = new System.Drawing.Point(152, 55);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(143, 55);
+            this.lblTax.TabIndex = 5;
+            this.lblTax.Text = "$0.00";
+            this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // lblTotalCost
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label8.Location = new System.Drawing.Point(152, 110);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 52);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "$0.00";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalCost.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalCost.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblTotalCost.Location = new System.Drawing.Point(152, 110);
+            this.lblTotalCost.Name = "lblTotalCost";
+            this.lblTotalCost.Size = new System.Drawing.Size(143, 52);
+            this.lblTotalCost.TabIndex = 6;
+            this.lblTotalCost.Text = "$0.00";
+            this.lblTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox2
             // 
@@ -1125,9 +1125,9 @@
         private Label label5;
         private Label label3;
         private Label label4;
-        private Label label6;
-        private Label label7;
-        private Label label8;
+        private Label lblSubtotal;
+        private Label lblTax;
+        private Label lblTotalCost;
         private Button btnShoppingCartToppingRemove;
         private GroupBox groupBox3;
         private ListBox shoppingCartListBox;

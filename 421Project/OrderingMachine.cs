@@ -78,11 +78,24 @@ namespace MainProgram
 
             ToppingIF? topping = toppingFactory.getTopping(toppingName);
             topping?.setIsExtra(isExtra);
-            if(topping != null && currentPizza != null)
+            if (topping != null && currentPizza != null)
             {
                 currentPizza = new PizzaWrapper(currentPizza, topping);
-                Debug.WriteLine("Added the new toppings!");
             }
+        }
+        public double[] getPrice()
+        {
+            double[]? price = new double[3];
+
+            if(currentPizza != null)
+            {
+                price[0] = currentPizza.getPrice();
+                price[1] = price[0] * 0.07;
+                price[2] = price[0] + price[1];
+            }
+
+            return price;
+
         }
 
     }

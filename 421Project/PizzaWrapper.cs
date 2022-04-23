@@ -17,7 +17,7 @@ namespace Pizza
         //TODO: FIX GET PRICE!
         public override double getPrice()
         {
-            return base.getPrice();
+            return pizza.getPrice() + topping.getPrice();
         }
 
         //TODO: FIX MAKE!

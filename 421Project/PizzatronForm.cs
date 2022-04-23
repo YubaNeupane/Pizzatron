@@ -55,6 +55,14 @@ namespace _421Project
             }
         }
 
+        private void updatePrice()
+        {
+            double[] price = orderingMachine.getPrice();
+            lblSubtotal.Text = price[0].ToString("C2");
+            lblTax.Text = price[1].ToString("C2");
+            lblTotalCost.Text = price[2].ToString("C2");
+        }
+
         private void updateSelectedPizzaBase()
         {
             PizzaBaseFromFile pizzaBaseFromFile = orderingMachine.getSelctedPizzaBase();
@@ -169,6 +177,16 @@ namespace _421Project
             btnRemoveSelectedItem.Enabled = false;
         }
 
+        private void orderPizza()
+        {
+            orderingMachine.createPizza(orderingMachine.getSelctedPizzaBase().Name);
+            foreach (KeyValuePair<string, bool> item in selectedToppings)
+            {
+                orderingMachine.addTopingToPizza(item.Key, item.Value);
+            }
+            updatePrice();
+        }
+
         private void btnDoneSelecting_Click(object sender, EventArgs e)
         {
 
@@ -177,12 +195,7 @@ namespace _421Project
             pizzaTabMenu.Enabled = false;
 
             updateShoppingCartTopping();
-            orderingMachine.createPizza(orderingMachine.getSelctedPizzaBase().Name);
-            foreach (KeyValuePair<string, bool> item in selectedToppings)
-            {
-                orderingMachine.addTopingToPizza(item.Key, item.Value);
-            }
-
+            orderPizza();
         }
 
         private void btnClearCart_Click(object sender, EventArgs e)
@@ -210,6 +223,7 @@ namespace _421Project
             }
             selectedToppings.Remove(selectedItem);
             updateShoppingCartTopping();
+            orderPizza();
         }
 
         private void shoppingCartListBox_SelectedIndexChanged(object sender, EventArgs e)
