@@ -93,6 +93,7 @@
             this.btnBuyNow = new System.Windows.Forms.Button();
             this.btnClearCart = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pnalOrderHider = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -728,6 +729,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.pnalOrderHider);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.tableLayoutPanel5);
@@ -737,6 +739,14 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(610, 626);
             this.panel3.TabIndex = 0;
+            // 
+            // pnalOrderHider
+            // 
+            this.pnalOrderHider.BackColor = System.Drawing.Color.Silver;
+            this.pnalOrderHider.Location = new System.Drawing.Point(6, 6);
+            this.pnalOrderHider.Name = "pnalOrderHider";
+            this.pnalOrderHider.Size = new System.Drawing.Size(601, 617);
+            this.pnalOrderHider.TabIndex = 4;
             // 
             // button2
             // 
@@ -1098,5 +1108,6 @@
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private Panel panel5;
+        private Panel pnalOrderHider;
     }
 }
