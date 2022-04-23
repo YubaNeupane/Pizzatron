@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PizzatronForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabCart = new System.Windows.Forms.TabControl();
@@ -278,8 +278,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem26,
+            listViewItem27});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -307,11 +307,10 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
-            this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
             // 
             // panel4
             // 
@@ -382,13 +381,13 @@
             this.columnHeader5});
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
+            listViewItem28.StateImageIndex = 0;
+            listViewItem29.StateImageIndex = 0;
+            listViewItem30.StateImageIndex = 0;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem28,
+            listViewItem29,
+            listViewItem30});
             this.listView2.Location = new System.Drawing.Point(3, 3);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(790, 435);
@@ -446,7 +445,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1243, 626);
             this.splitContainer1.SplitterDistance = 629;
             this.splitContainer1.TabIndex = 0;
-            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
             // splitContainer2
             // 
@@ -495,7 +493,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(615, 481);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // groupBox1
             // 

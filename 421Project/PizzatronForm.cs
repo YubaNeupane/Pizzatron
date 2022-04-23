@@ -40,25 +40,12 @@ namespace _421Project
             lblSelectedBasePizza.Text = pizzaBaseFromFile.Name + " \n" + pizzaBaseFromFile.price.ToString("C2");
         }
 
-        private void tabOrder_Click(object sender, EventArgs e)
+        private void updateSelectedTopping()
         {
 
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void listPizzaBaseMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
