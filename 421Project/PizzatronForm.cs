@@ -178,7 +178,10 @@ namespace _421Project
 
             updateShoppingCartTopping();
             orderingMachine.createPizza(orderingMachine.getSelctedPizzaBase().Name);
-
+            foreach (KeyValuePair<string, bool> item in selectedToppings)
+            {
+                orderingMachine.addTopingToPizza(item.Key, item.Value);
+            }
 
         }
 

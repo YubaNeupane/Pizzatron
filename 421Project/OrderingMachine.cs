@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Utility;
 using Pizza;
+using Toppings;
 
 namespace MainProgram
 {
@@ -15,12 +16,14 @@ namespace MainProgram
         private List<PizzaBaseFromFile> pizzaBaseFromFile;
         private int currentSelectedPizzaBase = -1;
         private PizzaIF? currentPizza;
+        private ToppingFactory toppingFactory;
 
         public OrderingMachine()
         {
             FileLoader fileLoader = new FileLoader();
             toppingFromFiles =  fileLoader.getToppingsFromFile();
             pizzaBaseFromFile = fileLoader.getPizzaBaseFromFile();
+            toppingFactory = new ToppingFactory();
         }
 
         public List<ToppingFromFile> getToppingFromFile()
@@ -46,18 +49,39 @@ namespace MainProgram
              return pizzaBaseFromFile[currentSelectedPizzaBase];
         }
 
+        private string splitName(string name)
+        {
+            string[] splitPizzaName = name.Split(" ");
+            name = "";
+            foreach (string s in splitPizzaName)
+            {
+                name += s;
+            }
+            return name;
+        }
+
         public void createPizza(string pizzaName)
         {
-            string[] splitPizzaName = pizzaName.Split(" ");
-            pizzaName = "";
-            foreach(string s in splitPizzaName)
-            {
-                pizzaName += s;
-            }
+            pizzaName = splitName(pizzaName);
             Type? type = Type.GetType("Pizza." + pizzaName);
             if (type != null)
             {
                 currentPizza = (PizzaIF?)Activator.CreateInstance(type);
+            }
+        }
+
+
+
+        public void addTopingToPizza(string toppingName, bool isExtra)
+        {
+            toppingName = splitName(toppingName);
+
+            ToppingIF? topping = toppingFactory.getTopping(toppingName);
+            topping?.setIsExtra(isExtra);
+            if(topping != null && currentPizza != null)
+            {
+                currentPizza = new PizzaWrapper(currentPizza, topping);
+                Debug.WriteLine("Added the new toppings!");
             }
         }
 
