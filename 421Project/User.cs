@@ -11,27 +11,23 @@ namespace Future
 {
     internal class User
     {
-        private string Name { get; }
-        private string Address { get; }
-        private string PhoneNumber { get; }
-        private string CardNumber { get; }
-        private string CVC { get; }
-        private StoreIF store;
+        public string Name { get; set; } = "";
+        public string Address { get; set; } = "";
+        public string PhoneNumber { get; set; } = "";
+        public string CardNumber { get; set; } = "";
+        public string CVC { get; set; } = "";
 
-        public User(string name, string address, string phoneNumber, string cardNumber, string cvc, StoreIF store)
+        public User()
         {
-            this.Name = name;
-            this.Address = address;
-            this.CardNumber = cardNumber;
-            this.CVC = cvc;
-            this.PhoneNumber = phoneNumber;
-            this.store = store;
+            
         }
-        public OrderFuture getOrder(PizzaIF pizza, ProgressBar progress)
+
+
+        public OrderFuture getOrder(StoreIF store ,PizzaIF pizza, ProgressBar progress, ToolStripProgressBar miniProgressBar)
         {
             lock (this)
             {
-                return new OrderFuture(store, pizza, progress);
+                return new OrderFuture(store, pizza, progress, miniProgressBar);
             }
         }
     }

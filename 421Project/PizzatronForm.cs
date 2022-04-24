@@ -17,7 +17,7 @@ namespace _421Project
         public PizzatronForm()
         {
             InitializeComponent();
-            orderingMachine = new OrderingMachine(mainProgressbar);
+            orderingMachine = new OrderingMachine(mainProgressbar, toolMiniProgressBar);
 
             displayMenu();
 
@@ -237,6 +237,8 @@ namespace _421Project
             orderingMachine.createPizza("");
             updatePrice();
             filterDropDownMenu.Text = "None";
+            mainProgressbar.Value = 0;
+            toolMiniProgressBar.Value = 0;
 
         }
 
@@ -284,6 +286,8 @@ namespace _421Project
         {
             pnalOrderHider.Visible = false;
             btnPay.Enabled = true;
+            orderingMachine.orderPizza();
+
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -296,14 +300,14 @@ namespace _421Project
             string cvcNumber = txtCVC.Text;
             if (firstName.Length > 0 && lastName.Length > 0 && address.Length > 0 && phoneNumber.Length == 14 && cardNumber.Length == 19 && cvcNumber.Length == 3)
             {
-                Debug.WriteLine(firstName);
-                Debug.WriteLine(lastName);
-                Debug.WriteLine(address);
-                Debug.WriteLine(phoneNumber);
-                Debug.WriteLine(cardNumber);
-                Debug.WriteLine(cvcNumber);
-                orderingMachine.orderPizza(firstName, lastName, address, phoneNumber, cardNumber, cvcNumber);
-
+                if (orderingMachine.currentUser != null)
+                {
+                    orderingMachine.currentUser.Name = firstName + " " + lastName;
+                    orderingMachine.currentUser.Address = address;
+                    orderingMachine.currentUser.PhoneNumber = phoneNumber;
+                    orderingMachine.currentUser.CardNumber = cardNumber;
+                    orderingMachine.currentUser.CVC = cvcNumber;
+                }
             }
             else
             {

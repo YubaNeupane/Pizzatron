@@ -24,8 +24,10 @@ namespace MainProgram
         private Dictionary<string, StoreIF> stores = new Dictionary<string, StoreIF>();
         private StoreIF? selectedStore;
         private ProgressBar progressBar;
+        private ToolStripProgressBar miniProgressBar;
+        public User? currentUser;
 
-        public OrderingMachine(ProgressBar progressBar)
+        public OrderingMachine(ProgressBar progressBar, ToolStripProgressBar miniProgressBar)
         {
             FileLoader fileLoader = new FileLoader();
             toppingFromFiles =  fileLoader.getToppingsFromFile();
@@ -33,6 +35,7 @@ namespace MainProgram
             toppingFactory = new ToppingFactory();
             toppingFilter = new NoFilter(toppingFromFiles);
             this.progressBar = progressBar;
+            this.miniProgressBar = miniProgressBar;
 
 
 
@@ -41,12 +44,12 @@ namespace MainProgram
             stores.Add("Dominos", new Dominos());
         }
 
-        public void orderPizza(string firstName, string lastName, string address, string phoneNumber, string cardNumber, string cvcNumber)
+        public void orderPizza()
         {
             if(selectedStore != null && currentPizza != null)
             {
-                User user = new User(firstName + " " + lastName, address, phoneNumber, cardNumber, cvcNumber, selectedStore);
-                user.getOrder(currentPizza,progressBar);
+                currentUser = new User();
+                currentUser.getOrder(selectedStore, currentPizza,progressBar, miniProgressBar);
             }
         }
 
