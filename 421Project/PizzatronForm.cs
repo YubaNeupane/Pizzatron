@@ -16,8 +16,8 @@ namespace _421Project
 
         public PizzatronForm()
         {
-            orderingMachine = new OrderingMachine();
             InitializeComponent();
+            orderingMachine = new OrderingMachine(mainProgressbar);
 
             displayMenu();
 
@@ -302,6 +302,8 @@ namespace _421Project
                 Debug.WriteLine(phoneNumber);
                 Debug.WriteLine(cardNumber);
                 Debug.WriteLine(cvcNumber);
+                orderingMachine.orderPizza(firstName, lastName, address, phoneNumber, cardNumber, cvcNumber);
+
             }
             else
             {

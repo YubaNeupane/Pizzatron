@@ -9,6 +9,7 @@ using Pizza;
 using Toppings;
 using PizzaFilters;
 using Stores;
+using Future;
 
 namespace MainProgram
 {
@@ -22,19 +23,31 @@ namespace MainProgram
         private PizzaFilterIF toppingFilter;
         private Dictionary<string, StoreIF> stores = new Dictionary<string, StoreIF>();
         private StoreIF? selectedStore;
+        private ProgressBar progressBar;
 
-        public OrderingMachine()
+        public OrderingMachine(ProgressBar progressBar)
         {
             FileLoader fileLoader = new FileLoader();
             toppingFromFiles =  fileLoader.getToppingsFromFile();
             pizzaBaseFromFile = fileLoader.getPizzaBaseFromFile();
             toppingFactory = new ToppingFactory();
             toppingFilter = new NoFilter(toppingFromFiles);
+            this.progressBar = progressBar;
 
-            
+
+
             stores.Add("Pizza Hut", new PizzaHut());
             stores.Add("Papa Johns", new PapaJohns());
             stores.Add("Dominos", new Dominos());
+        }
+
+        public void orderPizza(string firstName, string lastName, string address, string phoneNumber, string cardNumber, string cvcNumber)
+        {
+            if(selectedStore != null && currentPizza != null)
+            {
+                User user = new User(firstName + " " + lastName, address, phoneNumber, cardNumber, cvcNumber, selectedStore);
+                user.getOrder(currentPizza,progressBar);
+            }
         }
 
         public StoreIF? selectStore(string storeName)

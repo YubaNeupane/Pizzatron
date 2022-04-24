@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Stores;
 using Pizza;
+using System.Diagnostics;
 
 namespace Future
 {
@@ -12,11 +13,14 @@ namespace Future
     {
         private StoreIF store;
         private PizzaIF pizza;
+        int progress = 0;
         AsynchronousFuture futureSupport;
-        public OrderFuture(StoreIF store, PizzaIF pizza)
+        ProgressBar progressBar;
+        public OrderFuture(StoreIF store, PizzaIF pizza, ProgressBar pbar)
         {
             this.store = store;
             this.pizza = pizza;
+            this.progressBar = pbar;
             futureSupport= new AsynchronousFuture();
             new Thread(run).Start();
         }
@@ -25,7 +29,18 @@ namespace Future
         {
             try
             {
+                MethodInvoker mi = new MethodInvoker(() => progressBar.Value = 50);
+                if (progressBar.InvokeRequired)
+                {
+                    progressBar.Invoke(mi);
+                }
+                else
+                {
+                    mi.Invoke();
+                }
+
                 Order info = store.make(pizza);
+
             }
             catch (Exception)
             {

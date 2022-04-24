@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.tabOrder = new System.Windows.Forms.TabPage();
@@ -91,7 +91,7 @@
             this.lblWaitTime = new System.Windows.Forms.Label();
             this.lblWaitTimeTitle = new System.Windows.Forms.Label();
             this.storeComboBox = new System.Windows.Forms.ComboBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.mainProgressbar = new System.Windows.Forms.ProgressBar();
             this.btnBuyNow = new System.Windows.Forms.Button();
             this.btnClearCart = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -273,8 +273,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem6,
+            listViewItem7});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -413,13 +413,13 @@
             this.columnHeader6});
             this.toppingListView.FullRowSelect = true;
             this.toppingListView.GridLines = true;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
             this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
             this.toppingListView.Location = new System.Drawing.Point(3, 3);
             this.toppingListView.Name = "toppingListView";
             this.toppingListView.Size = new System.Drawing.Size(790, 435);
@@ -520,7 +520,7 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.shoppingChartPizzaName);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.progressBar1);
+            this.flowLayoutPanel1.Controls.Add(this.mainProgressbar);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -731,12 +731,12 @@
             this.storeComboBox.TabIndex = 0;
             this.storeComboBox.TextChanged += new System.EventHandler(this.storeComboBox_TextChanged);
             // 
-            // progressBar1
+            // mainProgressbar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 452);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(609, 26);
-            this.progressBar1.TabIndex = 4;
+            this.mainProgressbar.Location = new System.Drawing.Point(3, 452);
+            this.mainProgressbar.Name = "mainProgressbar";
+            this.mainProgressbar.Size = new System.Drawing.Size(609, 26);
+            this.mainProgressbar.TabIndex = 4;
             // 
             // btnBuyNow
             // 
@@ -1090,7 +1090,7 @@
         private Label lblTotalTitle;
         private TableLayoutPanel tableLayoutPanel3;
         private GroupBox groupBox2;
-        private ProgressBar progressBar1;
+        private ProgressBar mainProgressbar;
         private TableLayoutPanel tableLayoutPanel4;
         private Label lblWaitTime;
         private Label lblWaitTimeTitle;

@@ -16,9 +16,9 @@ namespace Future
         private string PhoneNumber { get; }
         private string CardNumber { get; }
         private string CVC { get; }
-        private Store store;
+        private StoreIF store;
 
-        public User(string name, string address, string phoneNumber, string cardNumber, string cvc, Store store)
+        public User(string name, string address, string phoneNumber, string cardNumber, string cvc, StoreIF store)
         {
             this.Name = name;
             this.Address = address;
@@ -27,11 +27,11 @@ namespace Future
             this.PhoneNumber = phoneNumber;
             this.store = store;
         }
-        public OrderFuture getOrder(PizzaIF pizza)
+        public OrderFuture getOrder(PizzaIF pizza, ProgressBar progress)
         {
             lock (this)
             {
-                return new OrderFuture(store, pizza);
+                return new OrderFuture(store, pizza, progress);
             }
         }
     }
