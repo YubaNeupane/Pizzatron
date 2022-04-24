@@ -26,6 +26,10 @@ namespace MainProgram
         private ProgressBar progressBar;
         private ToolStripProgressBar miniProgressBar;
         public User? currentUser;
+        public OrderFuture? order;
+        public List<Order> orderHistory;
+
+
 
         public OrderingMachine(ProgressBar progressBar, ToolStripProgressBar miniProgressBar)
         {
@@ -36,6 +40,7 @@ namespace MainProgram
             toppingFilter = new NoFilter(toppingFromFiles);
             this.progressBar = progressBar;
             this.miniProgressBar = miniProgressBar;
+            orderHistory = new List<Order>();
 
 
 
@@ -49,9 +54,11 @@ namespace MainProgram
             if(selectedStore != null && currentPizza != null)
             {
                 currentUser = new User();
-                currentUser.getOrder(selectedStore, currentPizza,progressBar, miniProgressBar);
+                order = currentUser.getOrder(selectedStore, currentPizza,currentUser, progressBar, miniProgressBar);
             }
         }
+
+        
 
         public StoreIF? selectStore(string storeName)
         {
@@ -141,6 +148,13 @@ namespace MainProgram
             if (topping != null && currentPizza != null)
             {
                 currentPizza = new PizzaWrapper(currentPizza, topping);
+            }
+        }
+        public void saveCurrentOrder()
+        {
+            if(currentUser != null && order != null)
+            {
+
             }
         }
         public double[] getPrice()

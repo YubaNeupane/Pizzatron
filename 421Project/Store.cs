@@ -29,9 +29,9 @@ namespace Stores
             return waitTime;
         }
 
-        public Order make(PizzaIF pizza)
+        public Order make(User user , PizzaIF pizza)
         {
-            return new Order();
+            return new Order(user, pizza);
         }
     }
 }

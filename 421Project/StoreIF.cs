@@ -12,6 +12,6 @@ namespace Stores
     {
         public string getStoreName();
         public double getWaitTime();
-        public Order make(PizzaIF pizza);
+        public Order make(User user, PizzaIF pizza);
     }
 }

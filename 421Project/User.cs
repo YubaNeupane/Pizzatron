@@ -23,11 +23,11 @@ namespace Future
         }
 
 
-        public OrderFuture getOrder(StoreIF store ,PizzaIF pizza, ProgressBar progress, ToolStripProgressBar miniProgressBar)
+        public OrderFuture getOrder(StoreIF store ,PizzaIF pizza, User currentUser,ProgressBar progress, ToolStripProgressBar miniProgressBar)
         {
             lock (this)
             {
-                return new OrderFuture(store, pizza, progress, miniProgressBar);
+                return new OrderFuture(store, pizza, progress, miniProgressBar, currentUser);
             }
         }
     }

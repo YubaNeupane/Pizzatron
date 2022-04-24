@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
@@ -115,10 +116,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolMiniProgressBar = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
+            this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.tabOrder.SuspendLayout();
@@ -965,7 +967,7 @@
             this.statusStrip1.BackColor = System.Drawing.Color.Silver;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolMiniProgressBar,
-            this.toolStripStatusLabel1});
+            this.toolStripLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 675);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1232, 22);
@@ -978,11 +980,10 @@
             this.toolMiniProgressBar.Size = new System.Drawing.Size(100, 16);
             this.toolMiniProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
-            // toolStripStatusLabel1
+            // toolStripLabel
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            this.toolStripLabel.Name = "toolStripLabel";
+            this.toolStripLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // tableLayoutPanel2
             // 
@@ -1014,6 +1015,11 @@
             this.lblTotalTitle.TabIndex = 5;
             this.lblTotalTitle.Text = "Total:";
             this.lblTotalTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // mainTimer
+            // 
+            this.mainTimer.Interval = 300;
+            this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
             // PizzatronForm
             // 
@@ -1080,7 +1086,7 @@
         private GroupBox shoppingChartPizzaName;
         private Button btnBuyNow;
         private Button btnClearCart;
-        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel toolStripLabel;
         private ToolStripProgressBar toolMiniProgressBar;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
@@ -1146,5 +1152,6 @@
         private Label label6;
         private ComboBox filterDropDownMenu;
         private MaskedTextBox txtPhoneNumber;
+        private System.Windows.Forms.Timer mainTimer;
     }
 }

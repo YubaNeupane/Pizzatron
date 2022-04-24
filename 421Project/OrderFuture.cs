@@ -17,14 +17,22 @@ namespace Future
         AsynchronousFuture futureSupport;
         ProgressBar progressBar;
         ToolStripProgressBar miniProgressBar;
-        public OrderFuture(StoreIF store, PizzaIF pizza, ProgressBar pbar, ToolStripProgressBar miniProgressBar)
+        public bool IsDone = false;
+        private User currentUser;
+        public OrderFuture(StoreIF store, PizzaIF pizza, ProgressBar pbar, ToolStripProgressBar miniProgressBar, User user)
         {
             this.store = store;
             this.pizza = pizza;
+            this.currentUser = user;
             this.progressBar = pbar;
             this.miniProgressBar = miniProgressBar;
             futureSupport = new AsynchronousFuture();
             new Thread(run).Start();
+        }
+
+        public Order? getResult()
+        {
+            return (Order?)futureSupport.getResult();
         }
 
         public void run()
@@ -49,10 +57,10 @@ namespace Future
 
                     Thread.Sleep((int)(store.getWaitTime()*50));
                 }
-            
 
-                Order info = store.make(pizza);
-
+                Order info = store.make(currentUser, pizza);
+                futureSupport.setResult(info);
+                IsDone = true;
             }
             catch (Exception)
             {

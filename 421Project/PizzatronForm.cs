@@ -282,11 +282,14 @@ namespace _421Project
             btnBuyNow.Enabled = true;
         }
 
+ 
+
         private void btnBuyNow_Click(object sender, EventArgs e)
         {
             pnalOrderHider.Visible = false;
             btnPay.Enabled = true;
             orderingMachine.orderPizza();
+            mainTimer.Start();
 
         }
 
@@ -328,6 +331,31 @@ namespace _421Project
         private void btnClearUserInput_Click(object sender, EventArgs e)
         {
             clearUserInput();
+        }
+
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+
+            if (orderingMachine.order != null)
+            {
+                if (orderingMachine.order.IsDone)
+                {
+                    if(orderingMachine.currentUser?.Name.Length > 0)
+                    {
+                        toolStripLabel.Text = "Pizza Completed! -- It will be delivered to you soon!";
+                    }
+                    else
+                    {
+                        toolStripLabel.Text = "Pizza Completed! -- Please pay to have the pizza be delivered to you!";
+                        orderingMachine.saveCurrentOrder();
+                    }
+                    mainTimer.Stop();
+                }
+                else
+                {
+                    toolStripLabel.Text = "Order Send to store --- Making Pizza : " + mainProgressbar.Value.ToString() + " %";
+                }
+            }
         }
     }
 }
