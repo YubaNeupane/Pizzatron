@@ -152,9 +152,12 @@ namespace MainProgram
         }
         public void saveCurrentOrder()
         {
-            if(currentUser != null && order != null)
+            if(currentUser != null && currentPizza != null)
             {
-
+                Order order = new Order(currentUser, currentPizza);
+                orderHistory.Add(order);
+                currentUser = null;
+                currentPizza = null;
             }
         }
         public double[] getPrice()

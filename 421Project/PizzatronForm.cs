@@ -4,6 +4,7 @@ using Toppings;
 using Utility;
 using System.Windows;
 using Stores;
+using Future;
 
 namespace _421Project
 {
@@ -343,11 +344,17 @@ namespace _421Project
                     if(orderingMachine.currentUser?.Name.Length > 0)
                     {
                         toolStripLabel.Text = "Pizza Completed! -- It will be delivered to you soon!";
+                        orderingMachine.saveCurrentOrder();
+                        foreach (Order o in orderingMachine.orderHistory)
+                        {
+                            Debug.WriteLine(o.user.Name);
+
+                        }
                     }
                     else
                     {
                         toolStripLabel.Text = "Pizza Completed! -- Please pay to have the pizza be delivered to you!";
-                        orderingMachine.saveCurrentOrder();
+
                     }
                     mainTimer.Stop();
                 }
