@@ -121,6 +121,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.lblThankYou = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.tabOrder.SuspendLayout();
@@ -148,6 +149,7 @@
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnalOrderHider.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -304,7 +306,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -777,6 +779,7 @@
             // pnalOrderHider
             // 
             this.pnalOrderHider.BackColor = System.Drawing.Color.Silver;
+            this.pnalOrderHider.Controls.Add(this.lblThankYou);
             this.pnalOrderHider.Location = new System.Drawing.Point(-1, 0);
             this.pnalOrderHider.Name = "pnalOrderHider";
             this.pnalOrderHider.Size = new System.Drawing.Size(608, 623);
@@ -1021,6 +1024,18 @@
             this.mainTimer.Interval = 300;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
+            // lblThankYou
+            // 
+            this.lblThankYou.AutoSize = true;
+            this.lblThankYou.Font = new System.Drawing.Font("Segoe UI Black", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblThankYou.ForeColor = System.Drawing.Color.Yellow;
+            this.lblThankYou.Location = new System.Drawing.Point(30, 248);
+            this.lblThankYou.Name = "lblThankYou";
+            this.lblThankYou.Size = new System.Drawing.Size(555, 128);
+            this.lblThankYou.TabIndex = 0;
+            this.lblThankYou.Text = "Thank You";
+            this.lblThankYou.Visible = false;
+            // 
             // PizzatronForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1062,6 +1077,8 @@
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.pnalOrderHider.ResumeLayout(false);
+            this.pnalOrderHider.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -1153,5 +1170,6 @@
         private ComboBox filterDropDownMenu;
         private MaskedTextBox txtPhoneNumber;
         private System.Windows.Forms.Timer mainTimer;
+        private Label lblThankYou;
     }
 }

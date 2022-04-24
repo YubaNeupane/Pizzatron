@@ -160,6 +160,15 @@ namespace MainProgram
                 currentPizza = null;
             }
         }
+
+        public void stopOrder()
+        {
+            if(order != null)
+            {
+                order.stop();
+            }
+        }
+
         public double[] getPrice()
         {
             double[]? price = new double[3];

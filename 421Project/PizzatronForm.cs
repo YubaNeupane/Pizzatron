@@ -228,6 +228,13 @@ namespace _421Project
 
         private void btnClearCart_Click(object sender, EventArgs e)
         {
+            if(orderingMachine?.order?.IsDone == false)
+            {
+                orderingMachine.stopOrder();
+                toolStripLabel.Text = "Order Caceled!";
+                mainTimer.Stop();
+            }
+
             mainTabControl.SelectedIndex = 0;
             pizzaTabMenu.Enabled = true;
             pizzaTabMenu.SelectTab(0);
@@ -235,11 +242,13 @@ namespace _421Project
             selectedToppings.Clear();
             updateSelectedTopping();
             updateShoppingCartTopping();
-            orderingMachine.createPizza("");
+            orderingMachine?.createPizza("");
             updatePrice();
             filterDropDownMenu.Text = "None";
             mainProgressbar.Value = 0;
             toolMiniProgressBar.Value = 0;
+            lblThankYou.Visible = false;
+            pnalOrderHider.Visible = false;
 
         }
 
@@ -311,6 +320,8 @@ namespace _421Project
                     orderingMachine.currentUser.PhoneNumber = phoneNumber;
                     orderingMachine.currentUser.CardNumber = cardNumber;
                     orderingMachine.currentUser.CVC = cvcNumber;
+                    lblThankYou.Visible = true;
+                    pnalOrderHider.Visible = true;
                 }
             }
             else
@@ -345,18 +356,16 @@ namespace _421Project
                     {
                         toolStripLabel.Text = "Pizza Completed! -- It will be delivered to you soon!";
                         orderingMachine.saveCurrentOrder();
-                        foreach (Order o in orderingMachine.orderHistory)
-                        {
-                            Debug.WriteLine(o.user.Name);
+                        clearUserInput();
+                        btnClearCart.PerformClick();
+                        mainTimer.Stop();
 
-                        }
                     }
                     else
                     {
                         toolStripLabel.Text = "Pizza Completed! -- Please pay to have the pizza be delivered to you!";
 
                     }
-                    mainTimer.Stop();
                 }
                 else
                 {

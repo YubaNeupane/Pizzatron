@@ -19,6 +19,7 @@ namespace Future
         ToolStripProgressBar miniProgressBar;
         public bool IsDone = false;
         private User currentUser;
+        Thread t;
         public OrderFuture(StoreIF store, PizzaIF pizza, ProgressBar pbar, ToolStripProgressBar miniProgressBar, User user)
         {
             this.store = store;
@@ -27,12 +28,24 @@ namespace Future
             this.progressBar = pbar;
             this.miniProgressBar = miniProgressBar;
             futureSupport = new AsynchronousFuture();
-            new Thread(run).Start();
+            t = new Thread(run);
+            t.Start();
         }
 
         public Order? getResult()
         {
             return (Order?)futureSupport.getResult();
+        }
+        public void stop()
+        {
+            try
+            {
+                t.Interrupt();
+
+            }catch (Exception ex)
+            {
+
+            }
         }
 
         public void run()
