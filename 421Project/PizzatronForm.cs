@@ -2,6 +2,8 @@ using System.Diagnostics;
 using MainProgram;
 using Toppings;
 using Utility;
+using System.Windows;
+using Stores;
 
 namespace _421Project
 {
@@ -10,6 +12,7 @@ namespace _421Project
         OrderingMachine orderingMachine;
         Dictionary<string,bool> selectedToppings = new Dictionary<string,bool>();
         ListViewItem? selectedItem;
+
 
         public PizzatronForm()
         {
@@ -269,6 +272,56 @@ namespace _421Project
         private void filterDropDownMenu_SelectedValueChanged(object sender, EventArgs e)
         {
             DisplayFilterItems(filterDropDownMenu.Text);
+        }
+
+        private void storeComboBox_TextChanged(object sender, EventArgs e)
+        {
+            lblWaitTime.Text = orderingMachine.selectStore(storeComboBox.Text)?.getWaitTime() + " Min";
+            btnBuyNow.Enabled = true;
+        }
+
+        private void btnBuyNow_Click(object sender, EventArgs e)
+        {
+            pnalOrderHider.Visible = false;
+            btnPay.Enabled = true;
+        }
+
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string address = txtAddress.Text;
+            string phoneNumber = txtPhoneNumber.Text;
+            string cardNumber = txtCardNumber.Text;
+            string cvcNumber = txtCVC.Text;
+            if (firstName.Length > 0 && lastName.Length > 0 && address.Length > 0 && phoneNumber.Length == 14 && cardNumber.Length == 19 && cvcNumber.Length == 3)
+            {
+                Debug.WriteLine(firstName);
+                Debug.WriteLine(lastName);
+                Debug.WriteLine(address);
+                Debug.WriteLine(phoneNumber);
+                Debug.WriteLine(cardNumber);
+                Debug.WriteLine(cvcNumber);
+            }
+            else
+            {
+                MessageBox.Show("Invalid user input!\nTry Again...", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void clearUserInput()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtAddress.Text = "";
+            txtPhoneNumber.Text = "";
+            txtCardNumber.Text = "";
+            txtCVC.Text = "";
+        }
+
+        private void btnClearUserInput_Click(object sender, EventArgs e)
+        {
+            clearUserInput();
         }
     }
 }

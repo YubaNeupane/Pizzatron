@@ -8,6 +8,7 @@ using Utility;
 using Pizza;
 using Toppings;
 using PizzaFilters;
+using Stores;
 
 namespace MainProgram
 {
@@ -19,6 +20,8 @@ namespace MainProgram
         private PizzaIF? currentPizza;
         private ToppingFactory toppingFactory;
         private PizzaFilterIF toppingFilter;
+        private Dictionary<string, StoreIF> stores = new Dictionary<string, StoreIF>();
+        private StoreIF? selectedStore;
 
         public OrderingMachine()
         {
@@ -27,6 +30,20 @@ namespace MainProgram
             pizzaBaseFromFile = fileLoader.getPizzaBaseFromFile();
             toppingFactory = new ToppingFactory();
             toppingFilter = new NoFilter(toppingFromFiles);
+
+            
+            stores.Add("Pizza Hut", new PizzaHut());
+            stores.Add("Papa Johns", new PapaJohns());
+            stores.Add("Dominos", new Dominos());
+        }
+
+        public StoreIF? selectStore(string storeName)
+        {
+            if (stores.ContainsKey(storeName))
+            {
+                selectedStore = stores[storeName];
+            }
+            return selectedStore;
         }
 
         public List<ToppingFromFile> getToppingFromFile()

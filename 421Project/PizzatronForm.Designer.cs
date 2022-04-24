@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test",
             "$4.99",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "Test 2",
             "$88.00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "Test",
             "Pine Apple",
             "$8.99"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.tabOrder = new System.Windows.Forms.TabPage();
@@ -88,29 +88,29 @@
             this.lblTotalCost = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblWaitTime = new System.Windows.Forms.Label();
             this.lblWaitTimeTitle = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.storeComboBox = new System.Windows.Forms.ComboBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnBuyNow = new System.Windows.Forms.Button();
             this.btnClearCart = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnalOrderHider = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.btnClearUserInput = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label15 = new System.Windows.Forms.Label();
-            this.maskedTextBox6 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCVC = new System.Windows.Forms.MaskedTextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+            this.txtCardNumber = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtAddress = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.txtFirstName = new System.Windows.Forms.MaskedTextBox();
+            this.txtLastName = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -273,8 +273,8 @@
             this.listPizzaBaseMenu.GridLines = true;
             this.listPizzaBaseMenu.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listPizzaBaseMenu.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9,
-            listViewItem10});
+            listViewItem1,
+            listViewItem2});
             this.listPizzaBaseMenu.Location = new System.Drawing.Point(6, 6);
             this.listPizzaBaseMenu.MultiSelect = false;
             this.listPizzaBaseMenu.Name = "listPizzaBaseMenu";
@@ -302,7 +302,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -413,13 +413,13 @@
             this.columnHeader6});
             this.toppingListView.FullRowSelect = true;
             this.toppingListView.GridLines = true;
-            listViewItem6.StateImageIndex = 0;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
             this.toppingListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8});
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.toppingListView.Location = new System.Drawing.Point(3, 3);
             this.toppingListView.Name = "toppingListView";
             this.toppingListView.Size = new System.Drawing.Size(790, 435);
@@ -671,7 +671,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.storeComboBox);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(295, 162);
@@ -684,7 +684,7 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.79152F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.20848F));
-            this.tableLayoutPanel4.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblWaitTime, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblWaitTimeTitle, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 78);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -693,16 +693,16 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(283, 78);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // label2
+            // lblWaitTime
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label2.Location = new System.Drawing.Point(209, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 78);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "10 Min";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblWaitTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblWaitTime.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblWaitTime.Location = new System.Drawing.Point(209, 0);
+            this.lblWaitTime.Name = "lblWaitTime";
+            this.lblWaitTime.Size = new System.Drawing.Size(71, 78);
+            this.lblWaitTime.TabIndex = 1;
+            this.lblWaitTime.Text = "---";
+            this.lblWaitTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblWaitTimeTitle
             // 
@@ -715,18 +715,21 @@
             this.lblWaitTimeTitle.Text = "Estimated Wait Time:";
             this.lblWaitTimeTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox1
+            // storeComboBox
             // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Pizza Hut"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 38);
-            this.comboBox1.TabIndex = 0;
+            this.storeComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.storeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.storeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.storeComboBox.FormattingEnabled = true;
+            this.storeComboBox.Items.AddRange(new object[] {
+            "Pizza Hut",
+            "Papa Johns",
+            "Dominos"});
+            this.storeComboBox.Location = new System.Drawing.Point(6, 34);
+            this.storeComboBox.Name = "storeComboBox";
+            this.storeComboBox.Size = new System.Drawing.Size(284, 38);
+            this.storeComboBox.TabIndex = 0;
+            this.storeComboBox.TextChanged += new System.EventHandler(this.storeComboBox_TextChanged);
             // 
             // progressBar1
             // 
@@ -744,6 +747,7 @@
             this.btnBuyNow.TabIndex = 1;
             this.btnBuyNow.Text = "Order Now!";
             this.btnBuyNow.UseVisualStyleBackColor = true;
+            this.btnBuyNow.Click += new System.EventHandler(this.btnBuyNow_Click);
             // 
             // btnClearCart
             // 
@@ -758,8 +762,8 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.pnalOrderHider);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btnPay);
+            this.panel3.Controls.Add(this.btnClearUserInput);
             this.panel3.Controls.Add(this.tableLayoutPanel5);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -771,29 +775,31 @@
             // pnalOrderHider
             // 
             this.pnalOrderHider.BackColor = System.Drawing.Color.Silver;
-            this.pnalOrderHider.Location = new System.Drawing.Point(6, 6);
+            this.pnalOrderHider.Location = new System.Drawing.Point(-1, 0);
             this.pnalOrderHider.Name = "pnalOrderHider";
-            this.pnalOrderHider.Size = new System.Drawing.Size(601, 617);
+            this.pnalOrderHider.Size = new System.Drawing.Size(608, 623);
             this.pnalOrderHider.TabIndex = 4;
             // 
-            // button2
+            // btnPay
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(204, 529);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(298, 76);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Pay";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPay.Enabled = false;
+            this.btnPay.Location = new System.Drawing.Point(204, 529);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(298, 76);
+            this.btnPay.TabIndex = 3;
+            this.btnPay.Text = "Pay";
+            this.btnPay.UseVisualStyleBackColor = true;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
-            // button3
+            // btnClearUserInput
             // 
-            this.button3.Location = new System.Drawing.Point(204, 447);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(298, 76);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClearUserInput.Location = new System.Drawing.Point(204, 447);
+            this.btnClearUserInput.Name = "btnClearUserInput";
+            this.btnClearUserInput.Size = new System.Drawing.Size(298, 76);
+            this.btnClearUserInput.TabIndex = 2;
+            this.btnClearUserInput.Text = "Clear";
+            this.btnClearUserInput.UseVisualStyleBackColor = true;
+            this.btnClearUserInput.Click += new System.EventHandler(this.btnClearUserInput_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -801,17 +807,17 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.25589F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.74411F));
             this.tableLayoutPanel5.Controls.Add(this.label15, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox6, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.txtCVC, 0, 5);
             this.tableLayoutPanel5.Controls.Add(this.label14, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox5, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtCardNumber, 0, 4);
             this.tableLayoutPanel5.Controls.Add(this.label13, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox4, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.txtPhoneNumber, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.label12, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox3, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.txtAddress, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox1, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.maskedTextBox2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txtFirstName, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtLastName, 1, 1);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 93);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
@@ -835,13 +841,13 @@
             this.label15.Text = "CVC:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // maskedTextBox6
+            // txtCVC
             // 
-            this.maskedTextBox6.Location = new System.Drawing.Point(253, 286);
-            this.maskedTextBox6.Mask = "000";
-            this.maskedTextBox6.Name = "maskedTextBox6";
-            this.maskedTextBox6.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox6.TabIndex = 13;
+            this.txtCVC.Location = new System.Drawing.Point(253, 286);
+            this.txtCVC.Mask = "000";
+            this.txtCVC.Name = "txtCVC";
+            this.txtCVC.Size = new System.Drawing.Size(337, 35);
+            this.txtCVC.TabIndex = 13;
             // 
             // label14
             // 
@@ -854,13 +860,13 @@
             this.label14.Text = "Card Number:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // maskedTextBox5
+            // txtCardNumber
             // 
-            this.maskedTextBox5.Location = new System.Drawing.Point(253, 230);
-            this.maskedTextBox5.Mask = "0000-0000-0000-0000";
-            this.maskedTextBox5.Name = "maskedTextBox5";
-            this.maskedTextBox5.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox5.TabIndex = 11;
+            this.txtCardNumber.Location = new System.Drawing.Point(253, 230);
+            this.txtCardNumber.Mask = "0000-0000-0000-0000";
+            this.txtCardNumber.Name = "txtCardNumber";
+            this.txtCardNumber.Size = new System.Drawing.Size(337, 35);
+            this.txtCardNumber.TabIndex = 11;
             // 
             // label13
             // 
@@ -873,13 +879,13 @@
             this.label13.Text = "Phone Number:";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // maskedTextBox4
+            // txtPhoneNumber
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(253, 174);
-            this.maskedTextBox4.Mask = "(999) 000-0000";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox4.TabIndex = 9;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(253, 174);
+            this.txtPhoneNumber.Mask = "(999) 000-0000";
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(337, 35);
+            this.txtPhoneNumber.TabIndex = 9;
             // 
             // label12
             // 
@@ -892,12 +898,12 @@
             this.label12.Text = "Address:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // maskedTextBox3
+            // txtAddress
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(253, 116);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox3.TabIndex = 7;
+            this.txtAddress.Location = new System.Drawing.Point(253, 116);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(337, 35);
+            this.txtAddress.TabIndex = 7;
             // 
             // label10
             // 
@@ -921,19 +927,19 @@
             this.label11.Text = "First Name:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // maskedTextBox1
+            // txtFirstName
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(253, 3);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox1.TabIndex = 4;
+            this.txtFirstName.Location = new System.Drawing.Point(253, 3);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(337, 35);
+            this.txtFirstName.TabIndex = 4;
             // 
-            // maskedTextBox2
+            // txtLastName
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(253, 60);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(337, 35);
-            this.maskedTextBox2.TabIndex = 5;
+            this.txtLastName.Location = new System.Drawing.Point(253, 60);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(337, 35);
+            this.txtLastName.TabIndex = 5;
             // 
             // label9
             // 
@@ -1086,9 +1092,9 @@
         private GroupBox groupBox2;
         private ProgressBar progressBar1;
         private TableLayoutPanel tableLayoutPanel4;
-        private Label label2;
+        private Label lblWaitTime;
         private Label lblWaitTimeTitle;
-        private ComboBox comboBox1;
+        private ComboBox storeComboBox;
         private Label label5;
         private Label label3;
         private Label label4;
@@ -1103,19 +1109,19 @@
         private TabPage tabPage1;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label13;
-        private MaskedTextBox maskedTextBox4;
+        private MaskedTextBox txxPhoneNumber;
         private Label label12;
-        private MaskedTextBox maskedTextBox3;
+        private MaskedTextBox txtAddress;
         private Label label10;
         private Label label11;
-        private MaskedTextBox maskedTextBox1;
-        private MaskedTextBox maskedTextBox2;
-        private Button button2;
-        private Button button3;
+        private MaskedTextBox txtFirstName;
+        private MaskedTextBox txtLastName;
+        private Button btnPay;
+        private Button btnClearUserInput;
         private Label label14;
-        private MaskedTextBox maskedTextBox5;
+        private MaskedTextBox txtCardNumber;
         private Label label15;
-        private MaskedTextBox maskedTextBox6;
+        private MaskedTextBox txtCVC;
         private TabControl pizzaTabMenu;
         private TabPage tabPage3;
         private TabPage tabPage4;
@@ -1140,5 +1146,6 @@
         private Panel pnalOrderHider;
         private Label label6;
         private ComboBox filterDropDownMenu;
+        private MaskedTextBox txtPhoneNumber;
     }
 }
