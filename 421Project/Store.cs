@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Future;
 using Pizza;
 
 namespace Stores
@@ -28,7 +29,9 @@ namespace Stores
             return waitTime;
         }
 
-        public abstract void make(PizzaIF pizza);
- 
+        public Order make(PizzaIF pizza)
+        {
+            return new Order();
+        }
     }
 }

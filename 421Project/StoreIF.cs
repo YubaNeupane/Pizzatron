@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pizza;
+using Future;
 
 namespace Stores
 {
@@ -11,6 +12,6 @@ namespace Stores
     {
         public string getStoreName();
         public double getWaitTime();
-        public void make(PizzaIF pizza);
+        public Order make(PizzaIF pizza);
     }
 }

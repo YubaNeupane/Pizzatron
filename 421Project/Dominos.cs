@@ -14,9 +14,5 @@ namespace Stores
             storeName = "Dominos";
             waitTime = 30;
         }
-        public override void make(PizzaIF pizza)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

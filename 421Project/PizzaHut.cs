@@ -15,9 +15,5 @@ namespace Stores
             storeName = "Pizza Hut";
         }
 
-        public override void make(PizzaIF pizza)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
