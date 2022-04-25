@@ -5,6 +5,7 @@ using Utility;
 using System.Windows;
 using Stores;
 using Future;
+using Pizza;
 
 namespace _421Project
 {
@@ -22,6 +23,21 @@ namespace _421Project
 
             displayMenu();
 
+        }
+
+        public void updatePizzaBoughtHistory()
+        {
+            orderHistoryListView.Items.Clear();
+            foreach (Order order in orderingMachine.orderHistory)
+            {
+                ListViewItem listViewItem = new ListViewItem(order.date.ToString());
+
+                listViewItem.SubItems.Add(order.user.Name);
+                listViewItem.SubItems.Add(order.user.Address);
+                listViewItem.SubItems.Add(order.pizza.getName());
+                listViewItem.SubItems.Add(order.pizza.getPrice().ToString("C2"));
+                orderHistoryListView.Items.Add(listViewItem);
+            }
         }
 
         private void DisplayFilterItems(string filterItem)
@@ -248,7 +264,7 @@ namespace _421Project
             mainProgressbar.Value = 0;
             toolMiniProgressBar.Value = 0;
             lblThankYou.Visible = false;
-            pnalOrderHider.Visible = false;
+            pnalOrderHider.Visible = true;
 
         }
 
@@ -291,8 +307,6 @@ namespace _421Project
             lblWaitTime.Text = orderingMachine.selectStore(storeComboBox.Text)?.getWaitTime() + " Min";
             btnBuyNow.Enabled = true;
         }
-
- 
 
         private void btnBuyNow_Click(object sender, EventArgs e)
         {
@@ -355,10 +369,11 @@ namespace _421Project
                     if(orderingMachine.currentUser?.Name.Length > 0)
                     {
                         toolStripLabel.Text = "Pizza Completed! -- It will be delivered to you soon!";
-                        orderingMachine.saveCurrentOrder();
+                        orderingMachine.saveCurrentOrder(selectedToppings);
                         clearUserInput();
                         btnClearCart.PerformClick();
                         mainTimer.Stop();
+                        updatePizzaBoughtHistory();
 
                     }
                     else
@@ -372,6 +387,57 @@ namespace _421Project
                     toolStripLabel.Text = "Order Send to store --- Making Pizza : " + mainProgressbar.Value.ToString() + " %";
                 }
             }
+        }
+
+        private void orderHistoryListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(orderHistoryListView.SelectedItems.Count > 0)
+            {
+                btnSaveAs.Enabled = true;
+            }
+            else
+            {
+                btnSaveAs.Enabled =false;
+            }
+        }
+
+        private void saveOrderFileDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            _ = saveOrderInAFile(saveOrderFileDialog.FileName);
+        }
+
+        public async Task saveOrderInAFile(string fileName )
+        {
+            ListView.SelectedIndexCollection selectedIndex = orderHistoryListView.SelectedIndices;
+            if (selectedIndex.Count == 0) return;
+
+            String textToSave ="";
+            for(int i = 0; i < selectedIndex.Count; i++)
+            {
+                textToSave += "|---------------------------------|\n";
+                int currentIndex = selectedIndex[i];
+                Order currentOrder = orderingMachine.orderHistory[currentIndex];
+                textToSave += "Date: " + DateTime.Now;
+                textToSave += "\nUser: " + currentOrder.user.Name;
+                textToSave += "\nPizza: " + currentOrder.pizza.getName();
+                foreach(String topping in currentOrder.toppings)
+                {
+                    textToSave += "\n\t\t --" + topping;
+
+                }
+                textToSave += "\n\nSub Total:" + currentOrder.pizza.getPrice().ToString("C2");
+                textToSave += "\nTax (7%):" + (currentOrder.pizza.getPrice()*0.07).ToString("C2");
+                textToSave += "\nTotal: " + (currentOrder.pizza.getPrice() + currentOrder.pizza.getPrice() * 0.07).ToString("C2");
+                textToSave += "\n|---------------------------------|\n\n\n";
+            }
+
+
+            await File.WriteAllTextAsync(fileName, textToSave);
+        }
+
+        private void btnSaveAs_Click(object sender, EventArgs e)
+        {
+            saveOrderFileDialog.ShowDialog();
         }
     }
 }

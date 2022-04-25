@@ -52,7 +52,7 @@ namespace Future
         {
             try
             {
-                MethodInvoker mi = new MethodInvoker(() => progressBar.Value += 1);
+                MethodInvoker mi = new MethodInvoker(() => progressBar.Value += 10);
                 MethodInvoker mi2 = new MethodInvoker(() => miniProgressBar.Value = progressBar.Value);
                 while (true)
                 {

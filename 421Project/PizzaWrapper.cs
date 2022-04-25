@@ -1,4 +1,5 @@
-﻿using Toppings;
+﻿using System.Diagnostics;
+using Toppings;
 
 namespace Pizza
 {
@@ -10,6 +11,7 @@ namespace Pizza
 
         public PizzaWrapper(PizzaIF pizza, ToppingIF topping)
         {
+            this.name = pizza.getName();
             this.pizza = pizza;
             this.topping = topping;
         }
@@ -19,10 +21,15 @@ namespace Pizza
             return pizza.getPrice() + topping.getPrice();
         }
 
-        //TODO: FIX MAKE!
+        public string getToppingsNames()
+        {
+            return pizza.getName() + topping.getName();
+
+        }
+
         public override void make()
         {
-            throw new NotImplementedException();
+            Debug.WriteLine("Making Pizza...");
         }
     }
 }

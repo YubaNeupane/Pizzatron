@@ -11,10 +11,14 @@ namespace Future
     {
         public User user;
         public PizzaIF pizza;
-        public  Order(User user, PizzaIF pizza)
+        public DateTime date;
+        public List<String> toppings;
+        public  Order(User user, PizzaIF pizza, List<String> toppings)
         {
             this.user = user;
             this.pizza = pizza;
+            date = DateTime.Now;
+            this.toppings = toppings;
         }
     }
 }

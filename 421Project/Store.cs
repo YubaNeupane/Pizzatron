@@ -31,7 +31,8 @@ namespace Stores
 
         public Order make(User user , PizzaIF pizza)
         {
-            return new Order(user, pizza);
+            List<String> temp = new List<String>();
+            return new Order(user, pizza, temp);
         }
     }
 }

@@ -97,6 +97,7 @@
             this.btnClearCart = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnalOrderHider = new System.Windows.Forms.Panel();
+            this.lblThankYou = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnClearUserInput = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -114,6 +115,14 @@
             this.txtLastName = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSaveAs = new System.Windows.Forms.Button();
+            this.orderHistoryListView = new System.Windows.Forms.ListView();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolMiniProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -121,7 +130,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalTitle = new System.Windows.Forms.Label();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
-            this.lblThankYou = new System.Windows.Forms.Label();
+            this.saveOrderFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.mainTabControl.SuspendLayout();
             this.tabOrder.SuspendLayout();
@@ -151,6 +160,7 @@
             this.panel3.SuspendLayout();
             this.pnalOrderHider.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -306,7 +316,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1200, 504);
+            this.tabPage4.Size = new System.Drawing.Size(1200, 519);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Toppings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -785,6 +795,18 @@
             this.pnalOrderHider.Size = new System.Drawing.Size(608, 623);
             this.pnalOrderHider.TabIndex = 4;
             // 
+            // lblThankYou
+            // 
+            this.lblThankYou.AutoSize = true;
+            this.lblThankYou.Font = new System.Drawing.Font("Segoe UI Black", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblThankYou.ForeColor = System.Drawing.Color.Yellow;
+            this.lblThankYou.Location = new System.Drawing.Point(30, 248);
+            this.lblThankYou.Name = "lblThankYou";
+            this.lblThankYou.Size = new System.Drawing.Size(555, 128);
+            this.lblThankYou.TabIndex = 0;
+            this.lblThankYou.Text = "Thank You";
+            this.lblThankYou.Visible = false;
+            // 
             // btnPay
             // 
             this.btnPay.Enabled = false;
@@ -957,6 +979,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.btnSaveAs);
+            this.tabPage1.Controls.Add(this.orderHistoryListView);
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -964,6 +989,70 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "ORDER HISTORY";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(25, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1047, 46);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Order History";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSaveAs
+            // 
+            this.btnSaveAs.Enabled = false;
+            this.btnSaveAs.Location = new System.Drawing.Point(1078, 6);
+            this.btnSaveAs.Name = "btnSaveAs";
+            this.btnSaveAs.Size = new System.Drawing.Size(155, 43);
+            this.btnSaveAs.TabIndex = 1;
+            this.btnSaveAs.Text = "Save As";
+            this.btnSaveAs.UseVisualStyleBackColor = true;
+            this.btnSaveAs.Click += new System.EventHandler(this.btnSaveAs_Click);
+            // 
+            // orderHistoryListView
+            // 
+            this.orderHistoryListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11});
+            this.orderHistoryListView.ForeColor = System.Drawing.Color.Navy;
+            this.orderHistoryListView.FullRowSelect = true;
+            this.orderHistoryListView.GridLines = true;
+            this.orderHistoryListView.Location = new System.Drawing.Point(25, 55);
+            this.orderHistoryListView.Name = "orderHistoryListView";
+            this.orderHistoryListView.Size = new System.Drawing.Size(1208, 571);
+            this.orderHistoryListView.TabIndex = 0;
+            this.orderHistoryListView.UseCompatibleStateImageBehavior = false;
+            this.orderHistoryListView.View = System.Windows.Forms.View.Details;
+            this.orderHistoryListView.SelectedIndexChanged += new System.EventHandler(this.orderHistoryListView_SelectedIndexChanged);
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Date";
+            this.columnHeader7.Width = 250;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Name";
+            this.columnHeader8.Width = 250;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Address";
+            this.columnHeader9.Width = 350;
+            // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "Pizza";
+            this.columnHeader10.Width = 250;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Amount";
+            this.columnHeader11.Width = 100;
             // 
             // statusStrip1
             // 
@@ -1024,17 +1113,10 @@
             this.mainTimer.Interval = 300;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
-            // lblThankYou
+            // saveOrderFileDialog
             // 
-            this.lblThankYou.AutoSize = true;
-            this.lblThankYou.Font = new System.Drawing.Font("Segoe UI Black", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblThankYou.ForeColor = System.Drawing.Color.Yellow;
-            this.lblThankYou.Location = new System.Drawing.Point(30, 248);
-            this.lblThankYou.Name = "lblThankYou";
-            this.lblThankYou.Size = new System.Drawing.Size(555, 128);
-            this.lblThankYou.TabIndex = 0;
-            this.lblThankYou.Text = "Thank You";
-            this.lblThankYou.Visible = false;
+            this.saveOrderFileDialog.Filter = "txt files (*.txt)|*.txt";
+            this.saveOrderFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveOrderFileDialog_FileOk);
             // 
             // PizzatronForm
             // 
@@ -1081,6 +1163,7 @@
             this.pnalOrderHider.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1171,5 +1254,14 @@
         private MaskedTextBox txtPhoneNumber;
         private System.Windows.Forms.Timer mainTimer;
         private Label lblThankYou;
+        private Label label2;
+        private Button btnSaveAs;
+        private ListView orderHistoryListView;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
+        private ColumnHeader columnHeader11;
+        private SaveFileDialog saveOrderFileDialog;
     }
 }

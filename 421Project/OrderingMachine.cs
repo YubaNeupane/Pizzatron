@@ -150,11 +150,17 @@ namespace MainProgram
                 currentPizza = new PizzaWrapper(currentPizza, topping);
             }
         }
-        public void saveCurrentOrder()
+        public void saveCurrentOrder(Dictionary<string, bool> selectedToppings)
         {
             if(currentUser != null && currentPizza != null)
             {
-                Order order = new Order(currentUser, currentPizza);
+                List<String> toppings = new List<String>();
+                foreach(string toppingName in selectedToppings.Keys)
+                {
+                    toppings.Add(toppingName + (selectedToppings[toppingName] == true ? "\t(Extra)" : ""));
+                }
+
+                Order order = new Order(currentUser, currentPizza, toppings);
                 orderHistory.Add(order);
                 currentUser = null;
                 currentPizza = null;
