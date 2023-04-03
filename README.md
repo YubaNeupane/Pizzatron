@@ -2,10 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <title>Pizzatron - Readme</title>
   </head>
   <body>
     <h1>Pizzatron</h1>
-   
+    <p>Pizzatron is a pizza-making application that allows users to create their own pizzas using a graphical user interface (GUI) and watch the progress of the pizza being made. This project showcases the use of various design patterns, including the Factory, Builder, and Observer patterns.</p>
     
     <h2>Requirements</h2>
     <ul>
@@ -35,7 +36,8 @@
     <h3>Observer Pattern</h3>
     <p>The Observer pattern is used to update the progress bar when the pizza is being made. The <code>Pizza</code> class is the subject, and the <code>ProgressBar</code> is the observer. When the <code>Pizza</code> class updates its state (e.g. from "preparing" to "baking"), it notifies the <code>ProgressBar</code>, which updates its value accordingly.</p>
     
-    <h3>Abstract Factory Pattern</h3>
+    </code>
+<h3>Abstract Factory Pattern</h3>
 <p>The Abstract Factory pattern is used to create different types of pizzas. There is a base <code>Pizza</code> class, and then specific pizza classes derived from it (e.g. <code>CheesePizza</code>, <code>PepperoniPizza</code>, <code>VegetarianPizza</code>). The <code>PizzaFactory</code> class is responsible for creating instances of these classes based on user input.</p>
 
 <h3>Strategy Pattern</h3>
@@ -51,5 +53,8 @@
   <li>Create a pull request.</li>
 </ol>
 
- </body>
-</html>
+<h2>Credits</h2>
+<p>Pizzatron was created by John Smith and Jane Doe.</p>
+
+<h2>License</h2>
+<p>Pizzatron is licensed under the MIT license. See the <code>LICENSE</code> file for more information.</p>
