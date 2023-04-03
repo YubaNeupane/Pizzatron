@@ -5,9 +5,13 @@
   </head>
   <body>
     <h1>Pizzatron</h1>
-    <p>Pizzatron is a pizza-making application that allows users to create their own pizzas using a graphical user interface (GUI) and watch the progress of the pizza being made. This project showcases the use of various design patterns, including the Factory, Builder, and Observer patterns.</p>
+   
     
-
+    <h2>Requirements</h2>
+    <ul>
+      <li>.NET Core 3.1 or higher</li>
+      <li>Visual Studio 2019 or higher</li>
+    </ul>
     
     <h2>Installation</h2>
     <ol>
